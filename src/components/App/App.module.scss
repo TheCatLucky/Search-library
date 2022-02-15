@@ -1,0 +1,11 @@
+.component {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.content {
+  flex: 1;
+  padding: 16px;
+}
