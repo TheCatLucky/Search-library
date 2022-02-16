@@ -1,7 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
 
-const ExtendedSearch: FC = () => (
-  <div />
-);
+import styles from './ExtendedSearch.module.scss';
+
+type ExtendedSearchProps = {};
+
+const ExtendedSearch: React.FC<ExtendedSearchProps> = (props) => {
+  return (
+    <div className={styles.component}>
+      ExtendedSearch
+    </div>
+  );
+};
 
 export default ExtendedSearch;

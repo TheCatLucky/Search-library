@@ -1,7 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
 
-const SearchItem: FC = () => (
-  <div />
-);
+import styles from './SearchItem.module.scss';
+
+type SearchItemProps = {};
+
+const SearchItem: React.FC<SearchItemProps> = (props) => {
+  return (
+    <div className={styles.component}>
+      SearchItem
+    </div>
+  );
+};
 
 export default SearchItem;

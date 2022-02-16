@@ -1,7 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
 
-const SearchDropdown: FC = () => (
-  <div />
-);
+import styles from './SearchDropdown.module.scss';
+
+type SearchDropdownProps = {};
+
+const SearchDropdown: React.FC<SearchDropdownProps> = (props) => {
+  return (
+    <div className={styles.component}>
+      SearchDropdown
+    </div>
+  );
+};
 
 export default SearchDropdown;

@@ -1,7 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
 
-const SearchCategory: FC = () => (
-  <div />
-);
+import styles from './SearchCategory.module.scss';
+
+type SearchCategoryProps = {};
+
+const SearchCategory: React.FC<SearchCategoryProps> = (props) => {
+  return (
+    <div className={styles.component}>
+      SearchCategory
+    </div>
+  );
+};
 
 export default SearchCategory;
