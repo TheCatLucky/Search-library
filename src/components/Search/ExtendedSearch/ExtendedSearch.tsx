@@ -2,10 +2,8 @@ import React from 'react';
 
 import classes from './ExtendedSearch.module.scss';
 
-type ExtendedSearchProps = {};
+type Props = {};
 
-const ExtendedSearch: React.FC<ExtendedSearchProps> = (props) => {
-  return <div className={classes.component}>ExtendedSearch</div>;
-};
+const ExtendedSearch: React.FC<Props> = (props) => <div className={classes.component}>ExtendedSearch</div>;
 
 export default ExtendedSearch;

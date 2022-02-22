@@ -1087,6 +1087,11 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@bem-react/classname@^1.5.8":
+  version "1.5.12"
+  resolved "https://registry.yarnpkg.com/@bem-react/classname/-/classname-1.5.12.tgz#cd7e8fe68abd5d0ab79d8dc27fb40b12c8fb7715"
+  integrity sha512-7wc2zfHwGplXh1izmVfM8cHWOHx9eQEl4b2KiVp4Wa6Va/MEhnz+eFwEK+5A8o1tVKvHX0wiXkwDQLfFDl2wYw==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
@@ -1191,6 +1196,14 @@
     stylelint "^14.3.0"
     stylelint-order "^5.0.0"
     stylelint-scss "^4.1.0"
+
+"@ff/ui-kit@^1.3.0":
+  version "1.3.0"
+  resolved "https://npm.gnivc.ru/@ff%2fui-kit/-/ui-kit-1.3.0.tgz#0e125f11ec2f7bfcca1d211b27aa09ab1e8abef0"
+  integrity sha512-bbOpIRYfvVtwYu/pVq1rnuEyamEdLVLYhJmnVotlh6WBP3YjRFDtmLxoa9hs6XmHnubDhZ8OkcPefM6uH5HtuA==
+  dependencies:
+    "@bem-react/classname" "^1.5.8"
+    dayjs "^1.10.5"
 
 "@gar/promisify@^1.0.1":
   version "1.1.3"
@@ -4203,6 +4216,11 @@ data-urls@^2.0.0:
     abab "^2.0.3"
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
+
+dayjs@^1.10.5:
+  version "1.10.7"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.7.tgz#2cf5f91add28116748440866a0a1d26f3a6ce468"
+  integrity sha512-P6twpd70BcPK34K26uJ1KT3wlhpuOAPoMwJzpsIWUxHZ7wpmbdZL/hQqBDfz7hGurYSa5PhzdhDHtt319hL3ig==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.9:
   version "2.6.9"

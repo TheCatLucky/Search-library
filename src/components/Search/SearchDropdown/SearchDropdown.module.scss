@@ -1,2 +1,11 @@
 .component {
+  display: flex;
+  flex-direction: column;
+  width: 893px;
+  height: 893px;
+  background-color: aqua;
+  .showAll {
+    display: flex;
+    justify-content: center;
+  }
 }
