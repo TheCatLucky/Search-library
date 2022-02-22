@@ -1,15 +1,11 @@
 import React from 'react';
 
-import styles from './Search.module.scss';
+import classes from './Search.module.scss';
 
 type SearchProps = {};
 
 const Search: React.FC<SearchProps> = (props) => {
-  return (
-    <div className={styles.component}>
-      Search
-    </div>
-  );
+  return <div className={classes.component}>Search</div>;
 };
 
 export default Search;
