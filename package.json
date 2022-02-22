@@ -19,7 +19,7 @@
     "husky": "^4.3.8",
     "lint-staged": "^11.2.6",
     "lodash": "^4.17.21",
-    "mobx": "^6.3.13",
+    "mobx": "^6.4.1",
     "mobx-react-lite": "^3.2.3",
     "postcss": "^8.4.6",
     "postcss-scss": "^4.0.3",
