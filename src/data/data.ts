@@ -6,16 +6,18 @@ const data: Data = {
       id: 1,
       name: 'Фильмы',
       links: 122,
+      objects: 105,
       created: new Date(2022, 1, 17),
-      lastObjectUpdate: new Date(2022, 1, 17),
+      lastUpdate: new Date(2022, 1, 17),
       attributes: ['Название', 'Год выпуска', 'Жанры', 'Актеры'],
     },
     {
       id: 2,
       name: 'Актеры',
       links: 190,
+      objects: 105,
       created: new Date(2022, 1, 17),
-      lastObjectUpdate: new Date(2022, 1, 17),
+      lastUpdate: new Date(2022, 1, 17),
       attributes: ['Имя', 'Дата рождения', 'Фильмы с участием'],
     },
   ],
@@ -44,6 +46,7 @@ const data: Data = {
   objects: [
     {
       id: 26,
+      name: 'Название объекта',
       requestRate: 542,
       linkedObjects: 12,
       created: new Date(2022, 1, 17),
@@ -59,6 +62,7 @@ const data: Data = {
     },
     {
       id: 29,
+      name: 'Название объекта',
       requestRate: 152,
       linkedObjects: 12,
       created: new Date(2022, 1, 17),
@@ -75,6 +79,7 @@ const data: Data = {
     },
     {
       id: 30,
+      name: 'Название объекта',
       requestRate: 152,
       linkedObjects: 12,
       created: new Date(2022, 1, 17),
@@ -90,6 +95,7 @@ const data: Data = {
     },
     {
       id: 127,
+      name: 'Название объекта',
       requestRate: 442,
       linkedObjects: 15,
       created: new Date(2022, 1, 17),
@@ -104,6 +110,7 @@ const data: Data = {
     },
     {
       id: 128,
+      name: 'Название объекта',
       requestRate: 444,
       linkedObjects: 15,
       created: new Date(2022, 1, 17),
@@ -118,6 +125,7 @@ const data: Data = {
     },
     {
       id: 129,
+      name: 'Название объекта',
       requestRate: 322,
       linkedObjects: 15,
       created: new Date(2022, 1, 17),
