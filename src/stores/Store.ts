@@ -1,6 +1,6 @@
 import { configure, makeAutoObservable } from 'mobx';
 
-import data from '../data/data';
+import data from '../data';
 import { Data } from '../models/data';
 import { ExtendedTerm } from '../models/extendedTerm';
 
