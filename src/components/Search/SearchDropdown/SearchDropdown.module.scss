@@ -3,9 +3,14 @@
   flex-direction: column;
   width: 893px;
   height: 893px;
-  background-color: aqua;
+  background: #FFFFFF;
+  border: 1px solid #E4E5E7;
   .showAll {
     display: flex;
     justify-content: center;
+  }
+  .result {
+    display: flex;
+    flex-direction: column;
   }
 }

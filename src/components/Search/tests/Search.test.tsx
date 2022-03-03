@@ -1,16 +1,16 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import Search from '../Search';
+import data from '../../../data';
 
 const testId = 'testingSearch';
 
-type SearchProps = React.ComponentProps<typeof Search>;
-
-const renderComponent = (props: SearchProps = {}) => render(<Search data-testid={testId} {...props} />);
+const search = <Search data-testid={testId} data={data} />;
 
 describe('Компонент Search', () => {
   it('отображается без ошибок', () => {
-    expect(renderComponent).not.toThrow();
+    render(search);
+    expect(screen.getByPlaceholderText('search...')).toBeInTheDocument();
   });
 });

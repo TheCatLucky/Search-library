@@ -1,2 +1,33 @@
 .component {
+  display: flex;
+  flex-direction: row;
+  .mainInfo {
+    width: 444px;
+    .itemName {
+      font-size: 16px;
+      color: #18191b;
+    }
+    .shortInfo {
+      display: flex;
+      flex-direction: row wrap;
+
+      font-size: 14px;
+      color: #797d86;
+      span {
+        padding-right: 16px;
+        color: #18191b;
+      }
+    }
+  }
+
+  .date {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #797d86;
+    margin: 0px 24px 0px 32px;
+    span {
+      color: #18191b;
+    }
+  }
 }
