@@ -2,8 +2,9 @@ export type Class = {
   id: number;
   name: string;
   links: number;
+  objects: number;
   created: Date;
-  lastObjectUpdate: Date;
+  lastUpdate: Date;
   attributes: Array<string>;
 };
 
@@ -19,6 +20,7 @@ export type DataSource = {
 
 export type DataObject = {
   id: number;
+  name: string;
   requestRate: number;
   linkedObjects: number;
   created: Date;
