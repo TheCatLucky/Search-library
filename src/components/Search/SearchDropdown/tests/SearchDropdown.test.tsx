@@ -2,17 +2,15 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import SearchDropdown from '../SearchDropdown';
+import { Data } from '../../../../models/data';
 
 const testId = 'testingSearchDropdown';
 
-type SearchDropdownProps = React.ComponentProps<typeof SearchDropdown>;
+type Props = {
+  filteredData: Data | null;
+};
 
-const renderComponent = (props: SearchDropdownProps = {}) => render(
-  <SearchDropdown
-    data-testid={testId}
-    {...props}
-  />,
-);
+const renderComponent = (props: Props) => render(<SearchDropdown data-testid={testId} filteredData={null} />);
 
 describe('Компонент SearchDropdown', () => {
   it('отображается без ошибок', () => {

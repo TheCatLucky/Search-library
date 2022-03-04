@@ -5,14 +5,16 @@ import SearchItem from '../SearchItem';
 
 const testId = 'testingSearchItem';
 
-type SearchItemProps = React.ComponentProps<typeof SearchItem>;
-
-const renderComponent = (props: SearchItemProps = {}) => render(
-  <SearchItem
-    data-testid={testId}
-    {...props}
-  />,
-);
+const data = {
+  id: 1,
+  name: 'Актеры',
+  links: 190,
+  objects: 105,
+  created: new Date(2022, 1, 17),
+  lastUpdate: new Date(2022, 1, 17),
+  tags: ['Имя', 'Дата рождения', 'Фильмы с участием'],
+};
+const renderComponent = () => render(<SearchItem data-testid={testId} data={data} />);
 
 describe('Компонент SearchItem', () => {
   it('отображается без ошибок', () => {
