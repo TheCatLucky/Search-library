@@ -5,7 +5,7 @@ export type Class = {
   objects: number;
   created: Date;
   lastUpdate: Date;
-  attributes: Array<string>;
+  tags: Array<string>;
 };
 
 export type DataSource = {
@@ -15,7 +15,7 @@ export type DataSource = {
   linkedDataSources: number;
   created: Date;
   lastUpdate: Date;
-  attributes: Array<string>;
+  tags: Array<string>;
 };
 
 export type DataObject = {
@@ -25,7 +25,7 @@ export type DataObject = {
   linkedObjects: number;
   created: Date;
   lastUpdate: Date;
-  attributes: Array<string>;
+  tags: Array<string>;
 };
 
 export type Data = {

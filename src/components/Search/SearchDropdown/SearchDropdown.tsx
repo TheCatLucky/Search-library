@@ -10,39 +10,52 @@ import SearchCategory from './SearchCategory';
 
 type Props = {
   filteredData: Data | null;
+  term: string;
 };
 
-const SearchDropdown: React.FC<Props> = ({ filteredData }) => {
+const SearchDropdown: React.FC<Props> = ({ filteredData, term }) => {
   const dataCalc = toJS(filteredData);
   if (dataCalc === null) {
     return <p>По вашему запросу ничего не найдено</p>;
   }
-
-  const resultClasses = Array.of(...Object.values(dataCalc.classes)).map(
-    (item) => item,
+  /*  const resul = Array.of(...Object.values(dataCalc.classes)).filter((item) =>
+    item.name.toLowerCase().includes(term.toLowerCase()),
   );
-  const finalClasses = _.flatMapDeep(resultClasses);
+
+  console.log(resul); */
+
+  const resultClasses = Array.of(...Object.values(dataCalc.classes)).filter(
+    (item) => item.name.toLowerCase().includes(term.toLowerCase()),
+  );
   const resultDataSources = Array.of(
     ...Object.values(dataCalc.dataSources),
-  ).map((item) => item);
-  const finalDataSources = _.flatMapDeep(resultDataSources);
-  const resultObjects = Array.of(...Object.values(dataCalc.objects)).map(
-    (item) => item,
+  ).filter((item) => item.name.toLowerCase().includes(term.toLowerCase()));
+  const resultObjects = Array.of(...Object.values(dataCalc.objects)).filter(
+    (item) => item.name.toLowerCase().includes(term.toLowerCase()),
   );
+
+  const finalClasses = _.flatMapDeep(resultClasses);
+  const finalDataSources = _.flatMapDeep(resultDataSources);
   const finalObjects = _.flatMapDeep(resultObjects);
 
   return (
     <div className={classes.component}>
       <div className={classes.result}>
-        <p>
-          <SearchCategory data={finalClasses} name="Классы" />
-        </p>
-        <p>
-          <SearchCategory data={finalObjects} name="Объекты" />
-        </p>
-        <p>
-          <SearchCategory data={finalDataSources} name="Источники данных" />
-        </p>
+        {!!finalClasses.length && (
+          <p>
+            <SearchCategory data={finalClasses} name="Классы" />
+          </p>
+        )}
+        {!!finalObjects.length && (
+          <p>
+            <SearchCategory data={finalObjects} name="Объекты" />
+          </p>
+        )}
+        {!!finalDataSources.length && (
+          <p>
+            <SearchCategory data={finalDataSources} name="Источники данных" />
+          </p>
+        )}
       </div>
       <div className={classes.showAll}>
         <Button type="primary">Показать все результаты</Button>

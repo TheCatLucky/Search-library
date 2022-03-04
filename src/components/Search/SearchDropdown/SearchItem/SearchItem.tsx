@@ -11,13 +11,14 @@ type Props = {
 const SearchItem: React.FC<Props> = ({ data }) => {
   const createDate = dateConversion(data.created);
   const updateDate = dateConversion(data.lastUpdate);
+  console.log(typeof data);
   return (
     <div className={classes.component}>
       <div className={classes.mainInfo}>
         <div className={classes.itemName}>{data.name}</div>
         <div className={classes.shortInfo}>
           <p>
-            Атрибуты: <span>{data.attributes.length}</span>
+            Атрибуты: <span>{data.tags.length}</span>
           </p>
           {data.linkedObjects && (
             <p>

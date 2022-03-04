@@ -4,12 +4,15 @@ const data: Data = {
   classes: [
     {
       id: 1,
-      name: 'Фильмы',
+      name: 'Триллеры',
       links: 122,
       objects: 105,
       created: new Date(2022, 1, 17),
       lastUpdate: new Date(2022, 1, 17),
-      attributes: ['Название', 'Год выпуска', 'Жанры', 'Актеры'],
+      tags: ['Название', 'Год выпуска', 'Жанры', 'Актеры'],
+      /*  attributes: {
+        "year" : [1997,1998, 1975]
+      } */
     },
     {
       id: 2,
@@ -18,7 +21,7 @@ const data: Data = {
       objects: 105,
       created: new Date(2022, 1, 17),
       lastUpdate: new Date(2022, 1, 17),
-      attributes: ['Имя', 'Дата рождения', 'Фильмы с участием'],
+      tags: ['Имя', 'Дата рождения', 'Фильмы с участием'],
     },
   ],
 
@@ -30,7 +33,7 @@ const data: Data = {
       linkedDataSources: 1338,
       created: new Date(2022, 1, 17),
       lastUpdate: new Date(2022, 1, 17),
-      attributes: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
+      tags: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
     },
     {
       id: 102,
@@ -39,7 +42,7 @@ const data: Data = {
       linkedDataSources: 2378,
       created: new Date(2022, 1, 17),
       lastUpdate: new Date(2022, 1, 17),
-      attributes: ['Статьи'],
+      tags: ['Статьи'],
     },
   ],
 
@@ -51,7 +54,7 @@ const data: Data = {
       linkedObjects: 12,
       created: new Date(2022, 1, 17),
       lastUpdate: new Date(2022, 1, 17),
-      attributes: [
+      tags: [
         'Мстители',
         '2012',
         'фантастика',
@@ -67,7 +70,7 @@ const data: Data = {
       linkedObjects: 12,
       created: new Date(2022, 1, 17),
       lastUpdate: new Date(2022, 1, 17),
-      attributes: [
+      tags: [
         'Умница Уилл Хантинг',
         '1997',
         'драма',
@@ -84,7 +87,7 @@ const data: Data = {
       linkedObjects: 12,
       created: new Date(2022, 1, 17),
       lastUpdate: new Date(2022, 1, 17),
-      attributes: [
+      tags: [
         'Эйфория',
         '2019',
         'драма',
@@ -100,7 +103,7 @@ const data: Data = {
       linkedObjects: 15,
       created: new Date(2022, 1, 17),
       lastUpdate: new Date(2022, 1, 17),
-      attributes: [
+      tags: [
         'Зендея',
         '1 сентября, 1996',
         'Мегаполис',
@@ -115,7 +118,7 @@ const data: Data = {
       linkedObjects: 15,
       created: new Date(2022, 1, 17),
       lastUpdate: new Date(2022, 1, 17),
-      attributes: [
+      tags: [
         'Джейкоб Элорди',
         '26 июня, 1997',
         'Эйфория',
@@ -130,7 +133,7 @@ const data: Data = {
       linkedObjects: 15,
       created: new Date(2022, 1, 17),
       lastUpdate: new Date(2022, 1, 17),
-      attributes: ['Хантер Шафер', '31 декабря, 1999', 'Эйфория'],
+      tags: ['Хантер Шафер', '31 декабря, 1999', 'Эйфория'],
     },
   ],
 };

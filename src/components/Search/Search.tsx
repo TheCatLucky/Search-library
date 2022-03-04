@@ -14,22 +14,11 @@ type Props = {
 
 const Search: React.FC<Props> = ({ data }) => {
   const { filteredData, term } = searchStore;
-  const dataCalc = toJS(filteredData);
   const [search, setSearch] = useState('');
   const handleSearch: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setSearch(e.target.value);
   };
-  // TODO : простой поиск производится только по названию сущности.
 
-  /* const result = Object.entries(dataCalc).map((item) =>
-    item[1].map((d) => d.attributes.filter((word) => word.includes('и'))),
-  ); */
-
-  /*   const resul = Array.of(...Object.values(dataCalc)).map((item) =>
-    item.map((it) =>
-      it.attributes.filter((i) => i.toLowerCase().includes(term.toLowerCase()))
-    )
-  ); */
   useEffect(() => {
     searchStore.setData(data);
   }, []);
@@ -48,7 +37,7 @@ const Search: React.FC<Props> = ({ data }) => {
         />
         <Icon name="tune" className={classes.extendedSerachIcon} />
       </div>
-      {search && <SearchDropdown filteredData={filteredData} />}
+      {search && <SearchDropdown filteredData={filteredData} term={term} />}
     </div>
   );
 };
