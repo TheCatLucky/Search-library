@@ -1,61 +1,73 @@
 import React from 'react';
 import Button from '@ff/ui-kit/lib/Button';
 import _ from 'lodash';
-import { toJS } from 'mobx';
 import { observer } from 'mobx-react-lite';
+import { toJS } from 'mobx';
 
 import classes from './SearchDropdown.module.scss';
 import { Data } from '../../../models/data';
 import SearchCategory from './SearchCategory';
+import SearchStore from '../../../store';
 
 type Props = {
-  filteredData: Data | null;
-  term: string;
+  store: SearchStore;
 };
 
-const SearchDropdown: React.FC<Props> = ({ filteredData, term }) => {
-  const dataCalc = toJS(filteredData);
-  if (dataCalc === null) {
-    return <p>По вашему запросу ничего не найдено</p>;
+const SearchDropdown: React.FC<Props> = (props) => {
+  const { store } = props;
+  console.log(toJS(store));
+  if (store.filteredData.length === 0) {
+    return (
+      <div className={classes.component}>
+        <p>По вашему запросу ничего не найдено</p>
+      </div>
+    );
   }
   /*  const resul = Array.of(...Object.values(dataCalc.classes)).filter((item) =>
-    item.name.toLowerCase().includes(term.toLowerCase()),
+    item.name.toLowerCase().includes(searchValue.toLowerCase()),
   );
 
   console.log(resul); */
 
-  const resultClasses = Array.of(...Object.values(dataCalc.classes)).filter(
-    (item) => item.name.toLowerCase().includes(term.toLowerCase()),
+  /*  const resultClasses = Array.of(...Object.values(dataCalc.classes)).filter(
+    (item) => item.name.toLowerCase().includes(searchValue.toLowerCase())
   );
+
   const resultDataSources = Array.of(
-    ...Object.values(dataCalc.dataSources),
-  ).filter((item) => item.name.toLowerCase().includes(term.toLowerCase()));
+    ...Object.values(dataCalc.dataSources)
+  ).filter((item) =>
+    item.name.toLowerCase().includes(searchValue.toLowerCase())
+  );
+
   const resultObjects = Array.of(...Object.values(dataCalc.objects)).filter(
-    (item) => item.name.toLowerCase().includes(term.toLowerCase()),
+    (item) => item.name.toLowerCase().includes(searchValue.toLowerCase())
   );
 
   const finalClasses = _.flatMapDeep(resultClasses);
   const finalDataSources = _.flatMapDeep(resultDataSources);
-  const finalObjects = _.flatMapDeep(resultObjects);
+  const finalObjects = _.flatMapDeep(resultObjects); */
 
   return (
     <div className={classes.component}>
-      <div className={classes.result}>
+      {/* <div className={classes.result}>
         {!!finalClasses.length && (
-          <p>
+          <div>
             <SearchCategory data={finalClasses} name="Классы" />
-          </p>
+          </div>
         )}
         {!!finalObjects.length && (
-          <p>
+          <div>
             <SearchCategory data={finalObjects} name="Объекты" />
-          </p>
+          </div>
         )}
         {!!finalDataSources.length && (
-          <p>
+          <div>
             <SearchCategory data={finalDataSources} name="Источники данных" />
-          </p>
+          </div>
         )}
+      </div> */}
+      <div>
+        <SearchCategory data={store.filteredData} name="Название" />
       </div>
       <div className={classes.showAll}>
         <Button type="primary">Показать все результаты</Button>

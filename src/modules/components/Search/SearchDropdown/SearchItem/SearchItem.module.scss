@@ -9,10 +9,13 @@
     }
     .shortInfo {
       display: flex;
-      flex-direction: row wrap;
-
+      flex-flow: row wrap;
       font-size: 14px;
       color: #797d86;
+      p {
+        margin-top: 4px;
+        margin-bottom: 0px;
+      }
       span {
         padding-right: 16px;
         color: #18191b;

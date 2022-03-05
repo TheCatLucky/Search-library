@@ -8,10 +8,12 @@ const testId = 'testingSearchDropdown';
 
 type Props = {
   filteredData: Data | null;
-  term: string;
+  searchValue: string;
 };
 
-const renderComponent = (props: Props) => render(<SearchDropdown data-testid={testId} filteredData={null} term="a" />);
+const renderComponent = (props: Props) => render(
+  <SearchDropdown data-testid={testId} filteredData={null} searchValue="a" />,
+);
 
 describe('Компонент SearchDropdown', () => {
   it('отображается без ошибок', () => {

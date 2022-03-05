@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import Search from '../Search';
-import data from '../../../data';
+import data from '../../../../data';
 
 const testId = 'testingSearch';
 
