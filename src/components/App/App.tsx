@@ -1,14 +1,20 @@
 import React from 'react';
 
-import { Search } from '../../modules/index';
-import classes from './App.module.scss';
 import data from '../../data';
-import SearchStore from '../../modules/store';
+import { Search, SearchStore } from '../../modules';
+import { ItemModel } from '../../modules/models';
+import classes from './App.module.scss';
 
 const App: React.FC = () => {
   const store = new SearchStore(data);
+
   const handleSearch = () => {
-    const filteredItems = data.filter((item) => item.name.toLowerCase().includes(store.searchValue.toLowerCase()));
+    const filteredItems = data.map((category) => ({
+      ...category,
+      items: category.items.filter((item: ItemModel) =>
+        item.name.toLowerCase().includes(store.searchValue.toLowerCase())
+      ),
+    }));
     store.setFilteredDate(filteredItems);
   };
   return (

@@ -1,5 +1,5 @@
-// Модель класса
-class ItemModel<DataType = any> {
+// Модель элемента категории
+class ItemModel<ItemsType = any> {
   id: string;
 
   name: string;
@@ -10,7 +10,10 @@ class ItemModel<DataType = any> {
 
   keywords?: string[];
 
-  data?: DataType;
+  /*
+  Данные, который пользователь вводит для отображения
+  */
+  data?: ItemsType;
 
   constructor(data: ItemModel) {
     this.id = data.id;

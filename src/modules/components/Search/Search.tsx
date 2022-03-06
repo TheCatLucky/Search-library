@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { TextField } from '@ff/ui-kit';
 import Icon from '@ff/ui-kit/lib/Icon';
 import { observer } from 'mobx-react-lite';
-import { TextField } from '@ff/ui-kit';
-import { toJS } from 'mobx';
+import React from 'react';
 
+import SearchStore from '../../store';
 import classes from './Search.module.scss';
 import SearchDropdown from './SearchDropdown';
-import SearchStore from '../../store';
 
 type Props = {
   store: SearchStore;
@@ -14,11 +13,10 @@ type Props = {
 };
 
 const Search: React.FC<Props> = (props) => {
-  const { store, onSearch } = props;
+  const { onSearch, store } = props;
   const handleSearch: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     store.setSearchValue(event.target.value);
     onSearch();
-    // console.log(toJS(store.items));
   };
   return (
     <div className={classes.component}>

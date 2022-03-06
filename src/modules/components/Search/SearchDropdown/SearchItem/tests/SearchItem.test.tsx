@@ -1,10 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
+import { ItemModel } from '../../../../../models';
 import SearchItem from '../SearchItem';
-import ItemModel from '../../../../../models/ItemModel';
-
-const testId = 'testingSearchItem';
 
 const data: ItemModel = {
   id: '1',
@@ -17,7 +15,7 @@ const data: ItemModel = {
   },
   keywords: ['Имя', 'Дата рождения', 'Фильмы с участием'],
 };
-const renderComponent = () => render(<SearchItem data-testid={testId} store={data} />);
+const renderComponent = () => render(<SearchItem store={data} />);
 
 describe('Компонент SearchItem', () => {
   it('отображается без ошибок', () => {

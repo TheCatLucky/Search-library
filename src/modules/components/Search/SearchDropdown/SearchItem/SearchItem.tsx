@@ -1,8 +1,6 @@
 import React from 'react';
-import { toJS } from 'mobx';
 
-import { Class, DataSource, DataObject } from '../../tests/data';
-import ItemModel from '../../../../models/ItemModel';
+import { ItemModel } from '../../../../models';
 import classes from './SearchItem.module.scss';
 
 type Props = {
@@ -11,17 +9,15 @@ type Props = {
 
 const SearchItem: React.FC<Props> = (props) => {
   const { store } = props;
-  console.log(toJS(store));
   const createDate = store.createDate.toLocaleDateString();
   const updateDate = store.updateDate.toLocaleDateString();
-
   return (
     <div className={classes.component}>
       <div className={classes.mainInfo}>
         <div className={classes.itemName}>{store.name}</div>
         <div className={classes.shortInfo}>
           {Object.keys(store.data).map((item) => (
-            <p>
+            <p key={item}>
               {item}:<span>{store.data[item]}</span>
             </p>
           ))}

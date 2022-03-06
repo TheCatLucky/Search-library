@@ -1,18 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import SearchDropdown from '../SearchDropdown';
-import SearchStore from '../../../../store';
 import data from '../../../../../data';
+import SearchStore from '../../../../store';
+import SearchDropdown from '../SearchDropdown';
 
-type Props = {
-  store: SearchStore;
-};
 const store = new SearchStore(data);
 
-const renderComponent = (props: Props) => render(
-  <SearchDropdown store={store} />,
-);
+const renderComponent = () => render(<SearchDropdown store={store} />);
 
 describe('Компонент SearchDropdown', () => {
   it('отображается без ошибок', () => {

@@ -1,17 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import SearchCategory from '../SearchCategory';
-import SearchStore from '../../../../../store';
 import data from '../../../../../../data';
-
-const testId = 'testingSearchCategory';
+import SearchStore from '../../../../../store';
+import SearchCategory from '../SearchCategory';
 
 const store = new SearchStore(data);
 
-const renderComponent = () => render(
-  <SearchCategory store={store.filteredData} name="Источники данных" />,
-);
+const renderComponent = () => render(<SearchCategory store={store.filteredData} />);
 
 describe('Компонент SearchCategory', () => {
   it('отображается без ошибок', () => {

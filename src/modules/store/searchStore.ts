@@ -1,37 +1,33 @@
 import { configure, makeAutoObservable } from 'mobx';
 
+import DataModel from '../models/DataModel';
 import { ExtendedTerm } from '../models/extendedTerm';
-import ItemModel from '../models/ItemModel';
 
 configure({
   enforceActions: 'always',
 });
 
 export class SearchStore {
-  items: ItemModel[] = [];
+  items: DataModel[] = [];
 
   searchValue = '';
 
   extendedTerm = {};
 
-  filteredData: ItemModel[] = [];
+  filteredData: DataModel[] = [];
 
-  constructor(items: ItemModel[] = []) {
+  constructor(items: DataModel[] = []) {
     makeAutoObservable(this);
     if (items.length) {
       this.setItems(items);
     }
   }
 
-  /* getAllData(): Data {
-    return this.data;
-  } */
-
-  setItems = (data: ItemModel[]) => {
+  setItems = (data: DataModel[]): void => {
     this.items = data;
   };
 
-  setFilteredDate = (data: ItemModel[]) => {
+  setFilteredDate = (data: DataModel[]): void => {
     this.filteredData = data;
   };
 
@@ -42,15 +38,6 @@ export class SearchStore {
   setExtendedTerm(value: ExtendedTerm): void {
     this.extendedTerm = value;
   }
-
-  setFilter = (searchValue = '') => {
-    this.searchValue = searchValue;
-    if (searchValue.length > 1) {
-      this.filteredData = this.items;
-    } else {
-      this.filteredData = this.items;
-    }
-  };
 }
 
 export default SearchStore;
