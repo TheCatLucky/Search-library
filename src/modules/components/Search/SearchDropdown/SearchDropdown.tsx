@@ -5,7 +5,7 @@ import { observer } from 'mobx-react-lite';
 import { toJS } from 'mobx';
 
 import classes from './SearchDropdown.module.scss';
-import { Data } from '../../../models/data';
+import { Data } from '../tests/data';
 import SearchCategory from './SearchCategory';
 import SearchStore from '../../../store';
 
@@ -67,7 +67,7 @@ const SearchDropdown: React.FC<Props> = (props) => {
         )}
       </div> */}
       <div>
-        <SearchCategory data={store.filteredData} name="Название" />
+        <SearchCategory store={store.filteredData} name="Название" />
       </div>
       <div className={classes.showAll}>
         <Button type="primary">Показать все результаты</Button>

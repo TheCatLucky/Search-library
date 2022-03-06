@@ -3,10 +3,10 @@ import { render, screen } from '@testing-library/react';
 
 import Search from '../Search';
 import data from '../../../../data';
+import SearchStore from '../../../store';
 
-const testId = 'testingSearch';
-
-const search = <Search data-testid={testId} data={data} />;
+const store = new SearchStore(data);
+const search = <Search onSearch={() => {}} store={store} />;
 
 describe('Компонент Search', () => {
   it('отображается без ошибок', () => {

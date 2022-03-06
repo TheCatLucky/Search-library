@@ -6,20 +6,20 @@ import SearchItem from '../SearchItem';
 import classes from './SearchCategory.module.scss';
 
 type Props = {
-  data: ItemModel[];
+  store: ItemModel[];
   name: string;
 };
 
 const SearchCategory: React.FC<Props> = (props) => {
-  const { data, name } = props;
-  console.log(toJS(data));
+  const { store, name } = props;
+  console.log(toJS(store));
   return (
     <div className={classes.component}>
       <h3>{name}</h3>
       <div>
-        {data.map((info) => (
+        {store.map((info) => (
           <div key={info.id} className={classes.componentItem}>
-            <SearchItem data={info} />
+            <SearchItem store={info} />
           </div>
         ))}
       </div>

@@ -1,4 +1,4 @@
-import { Data } from '../modules/models/data';
+import { Data } from '../modules/components/Search/tests/data';
 import ItemModel from '../modules/models/ItemModel';
 
 const data: ItemModel[] = [

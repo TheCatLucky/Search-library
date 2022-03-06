@@ -2,23 +2,15 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import SearchCategory from '../SearchCategory';
+import SearchStore from '../../../../../store';
+import data from '../../../../../../data';
 
 const testId = 'testingSearchCategory';
 
-const data = [
-  {
-    id: 1,
-    name: 'Актеры',
-    links: 190,
-    objects: 105,
-    created: new Date(2022, 1, 17),
-    lastUpdate: new Date(2022, 1, 17),
-    tags: ['Имя', 'Дата рождения', 'Фильмы с участием'],
-  },
-];
+const store = new SearchStore(data);
 
 const renderComponent = () => render(
-  <SearchCategory data-testid={testId} data={data} name="Источники данных" />,
+  <SearchCategory store={store.filteredData} name="Источники данных" />,
 );
 
 describe('Компонент SearchCategory', () => {

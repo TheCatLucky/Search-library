@@ -1,28 +1,28 @@
 import React from 'react';
 import { toJS } from 'mobx';
 
-import { Class, DataSource, DataObject } from '../../../../models/data';
+import { Class, DataSource, DataObject } from '../../tests/data';
 import ItemModel from '../../../../models/ItemModel';
 import classes from './SearchItem.module.scss';
 
 type Props = {
-  data: ItemModel;
+  store: ItemModel;
 };
 
 const SearchItem: React.FC<Props> = (props) => {
-  const { data } = props;
-  console.log(toJS(data));
-  const createDate = data.createDate.toLocaleDateString();
-  const updateDate = data.updateDate.toLocaleDateString();
+  const { store } = props;
+  console.log(toJS(store));
+  const createDate = store.createDate.toLocaleDateString();
+  const updateDate = store.updateDate.toLocaleDateString();
 
   return (
     <div className={classes.component}>
       <div className={classes.mainInfo}>
-        <div className={classes.itemName}>{data.name}</div>
+        <div className={classes.itemName}>{store.name}</div>
         <div className={classes.shortInfo}>
-          {Object.keys(data.data).map((item) => (
+          {Object.keys(store.data).map((item) => (
             <p>
-              {item}:<span>{data.data[item]}</span>
+              {item}:<span>{store.data[item]}</span>
             </p>
           ))}
         </div>
