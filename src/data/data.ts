@@ -1,9 +1,13 @@
 import DataModel from '../modules/models/DataModel';
+import classLogo from '../modules/icons/class.svg';
+import objectLogo from '../modules/icons/object.svg';
+import dataSourceLogo from '../modules/icons/dataSource.svg';
 
 const data: DataModel[] = [
   {
     id: '1',
-    title: 'Ваше название',
+    title: 'Классы',
+    logo: classLogo,
     items: [
       {
         id: '101',
@@ -30,8 +34,26 @@ const data: DataModel[] = [
         },
       },
       {
+        id: '23',
+        name: 'Вконтакте',
+        createDate: new Date(2022, 1, 17),
+        updateDate: new Date(2022, 1, 17),
+        keywords: [
+          'Мстители',
+          '2012',
+          'фантастика',
+          'Мэтт Дэймон',
+          'Бен Аффлек',
+          'Стеллан Скарсгард',
+        ],
+        data: {
+          Атрибуты: 542,
+          'Связанные объекты': 12,
+        },
+      },
+      {
         id: '26',
-        name: 'Название объекта',
+        name: 'Одноклассники',
         createDate: new Date(2022, 1, 17),
         updateDate: new Date(2022, 1, 17),
         keywords: [
@@ -51,11 +73,12 @@ const data: DataModel[] = [
   },
   {
     id: '2',
-    title: 'Совсем другое название',
+    title: 'Объекты',
+    logo: objectLogo,
     items: [
       {
         id: '101',
-        name: 'Кино',
+        name: 'Триллеры',
         createDate: new Date(2022, 1, 17),
         updateDate: new Date(2022, 1, 17),
         keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
@@ -67,7 +90,7 @@ const data: DataModel[] = [
       },
       {
         id: '102',
-        name: 'Википедия',
+        name: 'Комедии',
         createDate: new Date(2022, 1, 17),
         updateDate: new Date(2022, 1, 17),
         keywords: ['Статьи'],
@@ -78,8 +101,44 @@ const data: DataModel[] = [
         },
       },
       {
-        id: '26',
-        name: 'Название объекта',
+        id: '22',
+        name: 'Ужасы',
+        createDate: new Date(2022, 1, 17),
+        updateDate: new Date(2022, 1, 17),
+        keywords: [
+          'Мстители',
+          '2012',
+          'фантастика',
+          'Мэтт Дэймон',
+          'Бен Аффлек',
+          'Стеллан Скарсгард',
+        ],
+        data: {
+          Атрибуты: 542,
+          'Связанные объекты': 12,
+        },
+      },
+      {
+        id: '23',
+        name: 'Приключения',
+        createDate: new Date(2022, 1, 17),
+        updateDate: new Date(2022, 1, 17),
+        keywords: [
+          'Мстители',
+          '2012',
+          'фантастика',
+          'Мэтт Дэймон',
+          'Бен Аффлек',
+          'Стеллан Скарсгард',
+        ],
+        data: {
+          Атрибуты: 542,
+          'Связанные объекты': 12,
+        },
+      },
+      {
+        id: '24',
+        name: 'Боевики',
         createDate: new Date(2022, 1, 17),
         updateDate: new Date(2022, 1, 17),
         keywords: [
@@ -99,29 +158,24 @@ const data: DataModel[] = [
   },
   {
     id: '3',
-    title: 'Другое название',
+    title: 'Источники данных',
+    logo: dataSourceLogo,
     items: [
       {
         id: '101',
-        name: 'Киноискатель',
+        name: 'Азиатская',
         createDate: new Date(2022, 1, 17),
         updateDate: new Date(2022, 1, 17),
         keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
         data: {
           'Связанные классы': 190,
-          'Связанные объsadfasdfsd  asdf asd sdaf asdf asекты': 1338,
+          'Связанные объекты': 1338,
           Атрибуты: 312,
-          Атрываибуты: 312,
-          Атрпавываибуты: 312,
-          Атриывабуты: 312,
-          Атриывбуты: 312,
-          Атриымчсвабуты: 312,
-          Атриыфвабуты: 312,
         },
       },
       {
         id: '102',
-        name: 'Википедия',
+        name: 'Японская',
         createDate: new Date(2022, 1, 17),
         updateDate: new Date(2022, 1, 17),
         keywords: ['Статьи'],
@@ -132,8 +186,45 @@ const data: DataModel[] = [
         },
       },
       {
-        id: '26',
-        name: 'Название объекта',
+        id: '103',
+        name: 'Австралийская',
+        createDate: new Date(2022, 1, 17),
+        updateDate: new Date(2022, 1, 17),
+        keywords: [
+          'Мстители',
+          '2012',
+          'фантастика',
+          'Мэтт Дэймон',
+          'Бен Аффлек',
+          'Стеллан Скарсгард',
+        ],
+        data: {
+          Атрибуты: 542,
+          'Связанные объекты': 12,
+        },
+      },
+      {
+        id: '104',
+        name: 'Российская',
+        createDate: new Date(2022, 1, 17),
+        updateDate: new Date(2022, 1, 17),
+        keywords: [
+          'Мстители',
+          '2012',
+          'фантастика',
+          'Мэтт Дэймон',
+          'Бен Аффлек',
+          'Стеллан Скарсгард',
+        ],
+        data: {
+          Атрибуты: 542,
+          'Связанные объекты': 12,
+          'Связанные атрибуты': 12,
+        },
+      },
+      {
+        id: '105',
+        name: 'Мексиканская',
         createDate: new Date(2022, 1, 17),
         updateDate: new Date(2022, 1, 17),
         keywords: [

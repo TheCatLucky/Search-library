@@ -26,8 +26,8 @@ const SearchDropdown: React.FC<Props> = (props) => {
 
   return (
     <div className={classes.component}>
-      <div>
-        <SearchCategory store={store.filteredData} />
+      <div className={classes.scroll}>
+        <SearchCategory store={store.filteredData} limit={store.limit} />
       </div>
       <div className={classes.showAll}>
         <Button type="primary">Показать все результаты</Button>

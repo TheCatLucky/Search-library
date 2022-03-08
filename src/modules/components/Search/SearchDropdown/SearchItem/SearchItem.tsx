@@ -5,14 +5,18 @@ import classes from './SearchItem.module.scss';
 
 type Props = {
   store: ItemModel;
+  logo: string | undefined;
 };
 
 const SearchItem: React.FC<Props> = (props) => {
-  const { store } = props;
+  const { store, logo } = props;
   const createDate = store.createDate.toLocaleDateString();
   const updateDate = store.updateDate.toLocaleDateString();
   return (
     <div className={classes.component}>
+      <div className={classes.logo}>
+        <img src={logo} alt="лого" />
+      </div>
       <div className={classes.mainInfo}>
         <div className={classes.itemName}>{store.name}</div>
         <div className={classes.shortInfo}>

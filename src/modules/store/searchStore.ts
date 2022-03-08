@@ -1,4 +1,6 @@
-import { configure, makeAutoObservable } from 'mobx';
+import {
+  action, configure, makeObservable, observable,
+} from 'mobx';
 
 import DataModel from '../models/DataModel';
 import { ExtendedTerm } from '../models/extendedTerm';
@@ -12,12 +14,24 @@ export class SearchStore {
 
   searchValue = '';
 
+  limit = 0;
+
   extendedTerm = {};
 
   filteredData: DataModel[] = [];
 
   constructor(items: DataModel[] = []) {
-    makeAutoObservable(this);
+    makeObservable(this, {
+      setItems: action.bound,
+      setLimit: action.bound,
+      setFilteredDate: action.bound,
+      setSearchValue: action.bound,
+      setExtendedTerm: action.bound,
+      filteredData: observable,
+      extendedTerm: observable,
+      searchValue: observable,
+      items: observable,
+    });
     if (items.length) {
       this.setItems(items);
     }
@@ -25,6 +39,10 @@ export class SearchStore {
 
   setItems = (data: DataModel[]): void => {
     this.items = data;
+  };
+
+  setLimit = (limit: number): void => {
+    this.limit = limit;
   };
 
   setFilteredDate = (data: DataModel[]): void => {

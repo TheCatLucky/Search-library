@@ -3,11 +3,22 @@
   flex-direction: column;
   width: 893px;
   height: 893px;
-  background: #FFFFFF;
-  border: 1px solid #E4E5E7;
+  background: #ffffff;
+  border: 1px solid #e4e5e7;
+  .scroll {
+    overflow-x: auto;
+    &::after {
+      content: "";
+      margin-top: 24px;
+      display: block;
+      height: 1px;
+      background: #e4e5e7;
+    }
+  }
   .showAll {
     display: flex;
     justify-content: center;
+    margin: 12px 0px;
   }
   .result {
     display: flex;

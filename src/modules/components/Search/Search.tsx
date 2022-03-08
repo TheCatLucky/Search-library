@@ -10,12 +10,14 @@ import SearchDropdown from './SearchDropdown';
 type Props = {
   store: SearchStore;
   onSearch: () => Promise<void> | void;
+  limit: number;
 };
 
 const Search: React.FC<Props> = (props) => {
-  const { onSearch, store } = props;
+  const { onSearch, store, limit } = props;
   const handleSearch: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     store.setSearchValue(event.target.value);
+    store.setLimit(limit);
     onSearch();
   };
   return (

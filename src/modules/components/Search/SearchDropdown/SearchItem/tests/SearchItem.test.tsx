@@ -15,7 +15,8 @@ const data: ItemModel = {
   },
   keywords: ['Имя', 'Дата рождения', 'Фильмы с участием'],
 };
-const renderComponent = () => render(<SearchItem store={data} />);
+const logo = 'no logo';
+const renderComponent = () => render(<SearchItem store={data} logo={logo} />);
 
 describe('Компонент SearchItem', () => {
   it('отображается без ошибок', () => {

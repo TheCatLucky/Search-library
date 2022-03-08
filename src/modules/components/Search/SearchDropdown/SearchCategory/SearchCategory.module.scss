@@ -1,5 +1,12 @@
 .component {
   margin-left: 24px;
+  .title::after {
+    content: "";
+    display: block;
+    height: 1px;
+    margin: 8px 24px 0px 0px;
+    background: #e4e5e7;
+  }
   .componentItem {
     margin-top: 24px;
   }
