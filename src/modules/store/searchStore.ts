@@ -14,7 +14,7 @@ export class SearchStore {
 
   searchValue = '';
 
-  limit = 0;
+  limit = 10;
 
   extendedTerm = {};
 
