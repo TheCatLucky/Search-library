@@ -2,7 +2,7 @@ import Button from '@ff/ui-kit/lib/Button';
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 
-import SearchStore from '../../../store';
+import SearchStore from '../../store';
 import SearchCategory from './SearchCategory';
 import classes from './SearchDropdown.module.scss';
 
@@ -14,12 +14,12 @@ const SearchDropdown: React.FC<Props> = (props) => {
   const { store } = props;
   const isFilteredEmpty = store.filteredData.reduce(
     (acc, i) => i.items.length === 0 && acc,
-    true,
+    true
   );
   if (isFilteredEmpty) {
     return (
       <div className={classes.component}>
-        <p>По вашему запросу ничего не найдено</p>
+        <p className={classes.noResult}>По вашему запросу ничего не найдено</p>
       </div>
     );
   }
@@ -27,7 +27,10 @@ const SearchDropdown: React.FC<Props> = (props) => {
   return (
     <div className={classes.component}>
       <div className={classes.scroll}>
-        <SearchCategory store={store.filteredData} limit={store.limit} />
+        <SearchCategory
+          filteredStore={store.filteredData}
+          limit={store.limit}
+        />
       </div>
       <div className={classes.showAll}>
         <Button type="primary">Показать все результаты</Button>

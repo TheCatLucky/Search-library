@@ -6,9 +6,9 @@ class DataModel<DataType = any> {
 
   logo?: string;
 
-  /*
-  Данные, который пользователь вводит для отображения
-  */
+  /**
+   *Данные, который пользователь вводит для отображения
+   */
   items?: DataType;
 
   constructor(items: DataModel) {

@@ -1,9 +1,7 @@
-import {
-  action, configure, makeObservable, observable,
-} from 'mobx';
+import { action, computed, configure, makeObservable, observable } from 'mobx';
+import { ItemModel } from '../models';
 
 import DataModel from '../models/DataModel';
-import { ExtendedTerm } from '../models/extendedTerm';
 
 configure({
   enforceActions: 'always',
@@ -16,8 +14,6 @@ export class SearchStore {
 
   limit = 10;
 
-  extendedTerm = {};
-
   filteredData: DataModel[] = [];
 
   constructor(items: DataModel[] = []) {
@@ -26,9 +22,8 @@ export class SearchStore {
       setLimit: action.bound,
       setFilteredDate: action.bound,
       setSearchValue: action.bound,
-      setExtendedTerm: action.bound,
+      filteredItems: computed,
       filteredData: observable,
-      extendedTerm: observable,
       searchValue: observable,
       items: observable,
     });
@@ -37,24 +32,29 @@ export class SearchStore {
     }
   }
 
-  setItems = (data: DataModel[]): void => {
+  setItems(data: DataModel[]): void {
     this.items = data;
-  };
+  }
 
-  setLimit = (limit: number): void => {
+  setLimit(limit: number): void {
     this.limit = limit;
-  };
+  }
 
-  setFilteredDate = (data: DataModel[]): void => {
+  setFilteredDate(data: DataModel[]): void {
     this.filteredData = data;
-  };
+  }
 
   setSearchValue(value: string): void {
     this.searchValue = value;
   }
 
-  setExtendedTerm(value: ExtendedTerm): void {
-    this.extendedTerm = value;
+  get filteredItems():DataModel[] {
+    return this.items.map((category) => ({
+      ...category,
+      items: category.items.filter((item: ItemModel) =>
+        item.name.toLowerCase().includes(this.searchValue.toLowerCase())
+      ),
+    }));
   }
 }
 

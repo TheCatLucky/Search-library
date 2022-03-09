@@ -1,38 +1,37 @@
 import React from 'react';
 
-import { ItemModel } from '../../../../models';
+import { ItemModel } from '../../../models';
 import classes from './SearchItem.module.scss';
 
 type Props = {
-  store: ItemModel;
-  logo: string | undefined;
+  itemStore: ItemModel;
+  logo?: string;
 };
 
 const SearchItem: React.FC<Props> = (props) => {
-  const { store, logo } = props;
-  const createDate = store.createDate.toLocaleDateString();
-  const updateDate = store.updateDate.toLocaleDateString();
+  const { itemStore, logo } = props;
+  const create = itemStore.create.toLocaleDateString();
+  const update = itemStore.update.toLocaleDateString();
   return (
     <div className={classes.component}>
       <div className={classes.logo}>
         <img src={logo} alt="лого" />
       </div>
       <div className={classes.mainInfo}>
-        <div className={classes.itemName}>{store.name}</div>
+        <div className={classes.itemName}>{itemStore.name}</div>
         <div className={classes.shortInfo}>
-          {Object.keys(store.data).map((item) => (
+          {Object.keys(itemStore.data).map((item) => (
             <p key={item}>
-              {item}:<span>{store.data[item]}</span>
+              {item}:<span>{itemStore.data[item]}</span>
             </p>
           ))}
         </div>
       </div>
       <div className={classes.date}>
-        Дата создания: <span>{createDate}</span>
+        Дата создания: <span>{create}</span>
       </div>
-
       <div className={classes.date}>
-        Последнее исправление: <span>{updateDate}</span>
+        Последнее исправление: <span>{update}</span>
       </div>
     </div>
   );

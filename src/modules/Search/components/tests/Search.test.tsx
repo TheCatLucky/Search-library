@@ -3,10 +3,10 @@ import { render, screen } from '@testing-library/react';
 
 import Search from '../Search';
 import data from '../../../../data';
-import SearchStore from '../../../store';
+import SearchStore from '../../store';
 
 const store = new SearchStore(data);
-const search = <Search onSearch={() => {}} store={store} />;
+const search = <Search store={store} limit={10} />;
 
 describe('Компонент Search', () => {
   it('отображается без ошибок', () => {

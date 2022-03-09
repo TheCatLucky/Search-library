@@ -4,22 +4,22 @@ class ItemModel<ItemsType = any> {
 
   name: string;
 
-  createDate: Date;
+  create: Date;
 
-  updateDate: Date;
+  update: Date;
 
   keywords?: string[];
 
-  /*
-  Данные, который пользователь вводит для отображения
-  */
+  /**
+   *Данные, который пользователь вводит для отображения
+   */
   data?: ItemsType;
 
   constructor(data: ItemModel) {
     this.id = data.id;
     this.name = data.name;
-    this.createDate = data.createDate;
-    this.updateDate = data.updateDate;
+    this.create = data.create;
+    this.update = data.update;
     this.data = data.data;
   }
 }

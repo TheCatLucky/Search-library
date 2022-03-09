@@ -2,11 +2,13 @@
   display: flex;
   flex-direction: column;
   width: 893px;
-  height: 893px;
+  max-height: 893px;
   background: #ffffff;
   border: 1px solid #e4e5e7;
+
   .scroll {
     overflow-x: auto;
+
     &::after {
       content: "";
       margin-top: 24px;
@@ -15,11 +17,17 @@
       background: #e4e5e7;
     }
   }
+
+  .noResult{
+    margin-left: 10px;
+  }
+
   .showAll {
     display: flex;
     justify-content: center;
     margin: 12px 0px;
   }
+
   .result {
     display: flex;
     flex-direction: column;

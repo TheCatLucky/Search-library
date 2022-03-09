@@ -1,7 +1,7 @@
-import DataModel from '../modules/models/DataModel';
-import classLogo from '../modules/icons/class.svg';
-import objectLogo from '../modules/icons/object.svg';
-import dataSourceLogo from '../modules/icons/dataSource.svg';
+import DataModel from '../modules/Search/models/DataModel';
+import classLogo from '../modules/Search/assets/class.svg';
+import objectLogo from '../modules/Search/assets/object.svg';
+import dataSourceLogo from '../modules/Search/assets/dataSource.svg';
 
 const data: DataModel[] = [
   {
@@ -12,8 +12,8 @@ const data: DataModel[] = [
       {
         id: '101',
         name: 'Кинопоиск',
-        createDate: new Date(2022, 1, 17),
-        updateDate: new Date(2022, 1, 17),
+        create: new Date(2022, 1, 17),
+        update: new Date(2022, 1, 17),
         keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
         data: {
           'Связанные классы': 190,
@@ -24,8 +24,8 @@ const data: DataModel[] = [
       {
         id: '102',
         name: 'Википедия',
-        createDate: new Date(2022, 1, 17),
-        updateDate: new Date(2022, 1, 17),
+        create: new Date(2022, 1, 17),
+        update: new Date(2022, 1, 17),
         keywords: ['Статьи'],
         data: {
           'Связанные классы': 678,
@@ -36,8 +36,8 @@ const data: DataModel[] = [
       {
         id: '23',
         name: 'Вконтакте',
-        createDate: new Date(2022, 1, 17),
-        updateDate: new Date(2022, 1, 17),
+        create: new Date(2022, 1, 17),
+        update: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -54,8 +54,8 @@ const data: DataModel[] = [
       {
         id: '26',
         name: 'Одноклассники',
-        createDate: new Date(2022, 1, 17),
-        updateDate: new Date(2022, 1, 17),
+        create: new Date(2022, 1, 17),
+        update: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -79,8 +79,8 @@ const data: DataModel[] = [
       {
         id: '101',
         name: 'Триллеры',
-        createDate: new Date(2022, 1, 17),
-        updateDate: new Date(2022, 1, 17),
+        create: new Date(2022, 1, 17),
+        update: new Date(2022, 1, 17),
         keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
         data: {
           'Связанные классы': 190,
@@ -91,8 +91,8 @@ const data: DataModel[] = [
       {
         id: '102',
         name: 'Комедии',
-        createDate: new Date(2022, 1, 17),
-        updateDate: new Date(2022, 1, 17),
+        create: new Date(2022, 1, 17),
+        update: new Date(2022, 1, 17),
         keywords: ['Статьи'],
         data: {
           'Связанные классы': 678,
@@ -103,8 +103,8 @@ const data: DataModel[] = [
       {
         id: '22',
         name: 'Ужасы',
-        createDate: new Date(2022, 1, 17),
-        updateDate: new Date(2022, 1, 17),
+        create: new Date(2022, 1, 17),
+        update: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -121,8 +121,8 @@ const data: DataModel[] = [
       {
         id: '23',
         name: 'Приключения',
-        createDate: new Date(2022, 1, 17),
-        updateDate: new Date(2022, 1, 17),
+        create: new Date(2022, 1, 17),
+        update: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -139,8 +139,8 @@ const data: DataModel[] = [
       {
         id: '24',
         name: 'Боевики',
-        createDate: new Date(2022, 1, 17),
-        updateDate: new Date(2022, 1, 17),
+        create: new Date(2022, 1, 17),
+        update: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -164,8 +164,8 @@ const data: DataModel[] = [
       {
         id: '101',
         name: 'Азиатская',
-        createDate: new Date(2022, 1, 17),
-        updateDate: new Date(2022, 1, 17),
+        create: new Date(2022, 1, 17),
+        update: new Date(2022, 1, 17),
         keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
         data: {
           'Связанные классы': 190,
@@ -176,8 +176,8 @@ const data: DataModel[] = [
       {
         id: '102',
         name: 'Японская',
-        createDate: new Date(2022, 1, 17),
-        updateDate: new Date(2022, 1, 17),
+        create: new Date(2022, 1, 17),
+        update: new Date(2022, 1, 17),
         keywords: ['Статьи'],
         data: {
           'Связанные классы': 678,
@@ -188,8 +188,8 @@ const data: DataModel[] = [
       {
         id: '103',
         name: 'Австралийская',
-        createDate: new Date(2022, 1, 17),
-        updateDate: new Date(2022, 1, 17),
+        create: new Date(2022, 1, 17),
+        update: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -206,8 +206,8 @@ const data: DataModel[] = [
       {
         id: '104',
         name: 'Российская',
-        createDate: new Date(2022, 1, 17),
-        updateDate: new Date(2022, 1, 17),
+        create: new Date(2022, 1, 17),
+        update: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -225,8 +225,8 @@ const data: DataModel[] = [
       {
         id: '105',
         name: 'Мексиканская',
-        createDate: new Date(2022, 1, 17),
-        updateDate: new Date(2022, 1, 17),
+        create: new Date(2022, 1, 17),
+        update: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',

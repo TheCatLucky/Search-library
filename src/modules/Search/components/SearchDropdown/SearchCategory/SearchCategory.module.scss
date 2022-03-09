@@ -1,0 +1,19 @@
+.component {
+  margin-left: 24px;
+
+  .title {
+    margin-top: 24px;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      margin: 8px 24px 0px 0px;
+      background: #e4e5e7;
+    }
+  }
+
+  .Item {
+    margin-top: 24px;
+  }
+}
