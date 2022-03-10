@@ -1,10 +1,14 @@
 .component {
   display: flex;
   flex-direction: row;
-
+  margin-top: 24px;
+  
   .logo {
-    justify-content: flex-start;
-    margin-right: 28px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 40px;
+    margin-right: 16px;
   }
 
   .mainInfo {

@@ -16,8 +16,8 @@ const data = [
       {
         id: "1",
         name: "Название сущности объекта",
-        create: new Date(2000, 1, 1),
-        update: new Date(2000, 1, 1),
+        created: new Date(2000, 1, 1),
+        updated: new Date(2000, 1, 1),
         keywords: ["Ключевые слова"],
         data: {
           "Названия дополнительных данных сущности": 1,

@@ -3,14 +3,14 @@ import { render } from '@testing-library/react';
 
 import data from '../../../../../../data';
 import SearchStore from '../../../../store';
-import SearchCategory from '../SearchCategory';
+import SearchResult from '../SearchResult';
 
 const store = new SearchStore(data);
 
 const renderComponent = () =>
-  render(<SearchCategory filteredStore={store.filteredData} limit={10} />);
+  render(<SearchResult categories={store.dropdown}  />);
 
-describe('Компонент SearchCategory', () => {
+describe('Компонент SearchResult', () => {
   it('отображается без ошибок', () => {
     expect(renderComponent).not.toThrow();
   });

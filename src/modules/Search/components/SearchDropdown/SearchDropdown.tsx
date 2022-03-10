@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 import React from 'react';
 
 import SearchStore from '../../store';
-import SearchCategory from './SearchCategory';
+import SearchResult from './SearchResult';
 import classes from './SearchDropdown.module.scss';
 
 type Props = {
@@ -13,7 +13,7 @@ type Props = {
 const SearchDropdown: React.FC<Props> = (props) => {
   const { store } = props;
   const isFilteredEmpty = store.filteredData.reduce(
-    (acc, i) => i.items.length === 0 && acc,
+    (isEmpty, category) => category.items.length === 0 && isEmpty,
     true
   );
   if (isFilteredEmpty) {
@@ -23,14 +23,10 @@ const SearchDropdown: React.FC<Props> = (props) => {
       </div>
     );
   }
-
   return (
     <div className={classes.component}>
       <div className={classes.scroll}>
-        <SearchCategory
-          filteredStore={store.filteredData}
-          limit={store.limit}
-        />
+        <SearchResult categories={store.dropdown} />
       </div>
       <div className={classes.showAll}>
         <Button type="primary">Показать все результаты</Button>

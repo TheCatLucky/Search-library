@@ -2,8 +2,8 @@
 @import "@ff/ui-kit/lib/styles/fns.theme.css";
 @font-face {
   font-family: "Roboto";
-  src: url(./modules/Search/assets/Roboto-Bold.ttf);
-  src: url(./modules/Search/assets/Roboto-Regular.ttf);
+  src: url(./assets/Roboto-Bold.ttf);
+  src: url(./assets/Roboto-Regular.ttf);
 }
 body {
   height: 100%;

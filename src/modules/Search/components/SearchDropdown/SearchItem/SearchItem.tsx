@@ -10,28 +10,28 @@ type Props = {
 
 const SearchItem: React.FC<Props> = (props) => {
   const { itemStore, logo } = props;
-  const create = itemStore.create.toLocaleDateString();
-  const update = itemStore.update.toLocaleDateString();
+  const created = itemStore.created.toLocaleDateString();
+  const updated = itemStore.updated.toLocaleDateString();
   return (
     <div className={classes.component}>
       <div className={classes.logo}>
-        <img src={logo} alt="лого" />
+        <img src={itemStore.logo || logo} alt="лого" />
       </div>
       <div className={classes.mainInfo}>
         <div className={classes.itemName}>{itemStore.name}</div>
         <div className={classes.shortInfo}>
-          {Object.keys(itemStore.data).map((item) => (
-            <p key={item}>
-              {item}:<span>{itemStore.data[item]}</span>
+          {itemStore.data.map((item) => (
+            <p key={item.name}>
+              {item.name}:<span>{item.value}</span>
             </p>
           ))}
         </div>
       </div>
       <div className={classes.date}>
-        Дата создания: <span>{create}</span>
+        Дата создания: <span>{created}</span>
       </div>
       <div className={classes.date}>
-        Последнее исправление: <span>{update}</span>
+        Последнее исправление: <span>{updated}</span>
       </div>
     </div>
   );

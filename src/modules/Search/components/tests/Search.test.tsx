@@ -11,6 +11,6 @@ const search = <Search store={store} limit={10} />;
 describe('Компонент Search', () => {
   it('отображается без ошибок', () => {
     render(search);
-    expect(screen.getByPlaceholderText('search...')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('Поиск...')).toBeInTheDocument();
   });
 });

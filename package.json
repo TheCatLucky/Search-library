@@ -5,7 +5,7 @@
   "dependencies": {
     "@ff/generator": "^1.5.2",
     "@ff/linting": "1.6.2",
-    "@ff/ui-kit": "^1.3.0",
+    "@ff/ui-kit": "^1.4.0",
     "@testing-library/dom": "^8.11.3",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",

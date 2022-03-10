@@ -10,7 +10,7 @@ const App: React.FC = () => {
   return (
     <main className={classes.component}>
       <section className={classes.content}>
-        <Search store={store} limit={10} />
+        <Search store={store} />
       </section>
     </main>
   );

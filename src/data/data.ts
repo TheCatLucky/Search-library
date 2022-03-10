@@ -1,9 +1,9 @@
-import DataModel from '../modules/Search/models/DataModel';
-import classLogo from '../modules/Search/assets/class.svg';
-import objectLogo from '../modules/Search/assets/object.svg';
-import dataSourceLogo from '../modules/Search/assets/dataSource.svg';
-
-const data: DataModel[] = [
+import CategoryModel from '../modules/Search/models/CategoryModel';
+import classLogo from '../assets/class.svg';
+import objectLogo from '../assets/object.svg';
+import dataSourceLogo from '../assets/dataSource.svg';
+import uniqLogo from '../assets/UniqLogo.svg';
+const data: CategoryModel[] = [
   {
     id: '1',
     title: 'Классы',
@@ -12,32 +12,44 @@ const data: DataModel[] = [
       {
         id: '101',
         name: 'Кинопоиск',
-        create: new Date(2022, 1, 17),
-        update: new Date(2022, 1, 17),
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        logo: uniqLogo,
         keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
-        data: {
-          'Связанные классы': 190,
-          'Связанные объекты': 1338,
-          Атрибуты: 312,
-        },
+        data: [
+          {
+            name: 'Связанные классы',
+            value: 1338,
+          },
+          {
+            name: 'Связанные имена',
+            value: 1338,
+          },
+        ],
       },
+
       {
         id: '102',
         name: 'Википедия',
-        create: new Date(2022, 1, 17),
-        update: new Date(2022, 1, 17),
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
         keywords: ['Статьи'],
-        data: {
-          'Связанные классы': 678,
-          'Связанные объекты': 2378,
-          Атрибуты: 312,
-        },
+        data: [
+          {
+            name: 'Связанные классы',
+            value: 1338,
+          },
+          {
+            name: 'Связанные имена',
+            value: 1338,
+          },
+        ],
       },
       {
         id: '23',
         name: 'Вконтакте',
-        create: new Date(2022, 1, 17),
-        update: new Date(2022, 1, 17),
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -46,16 +58,22 @@ const data: DataModel[] = [
           'Бен Аффлек',
           'Стеллан Скарсгард',
         ],
-        data: {
-          Атрибуты: 542,
-          'Связанные объекты': 12,
-        },
+        data: [
+          {
+            name: 'Связанные классы',
+            value: 1338,
+          },
+          {
+            name: 'Связанные имена',
+            value: 1338,
+          },
+        ],
       },
       {
         id: '26',
         name: 'Одноклассники',
-        create: new Date(2022, 1, 17),
-        update: new Date(2022, 1, 17),
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -64,10 +82,16 @@ const data: DataModel[] = [
           'Бен Аффлек',
           'Стеллан Скарсгард',
         ],
-        data: {
-          Атрибуты: 542,
-          'Связанные объекты': 12,
-        },
+        data: [
+          {
+            name: 'Связанные классы',
+            value: 1338,
+          },
+          {
+            name: 'Связанные имена',
+            value: 1338,
+          },
+        ],
       },
     ],
   },
@@ -79,32 +103,42 @@ const data: DataModel[] = [
       {
         id: '101',
         name: 'Триллеры',
-        create: new Date(2022, 1, 17),
-        update: new Date(2022, 1, 17),
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
         keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
-        data: {
-          'Связанные классы': 190,
-          'Связанные объекты': 1338,
-          Атрибуты: 312,
-        },
+        data: [
+          {
+            name: 'Связанные классы',
+            value: 1338,
+          },
+          {
+            name: 'Связанные имена',
+            value: 1338,
+          },
+        ],
       },
       {
         id: '102',
         name: 'Комедии',
-        create: new Date(2022, 1, 17),
-        update: new Date(2022, 1, 17),
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
         keywords: ['Статьи'],
-        data: {
-          'Связанные классы': 678,
-          'Связанные объекты': 2378,
-          Атрибуты: 312,
-        },
+        data: [
+          {
+            name: 'Связанные классы',
+            value: 1338,
+          },
+          {
+            name: 'Связанные имена',
+            value: 1338,
+          },
+        ],
       },
       {
         id: '22',
         name: 'Ужасы',
-        create: new Date(2022, 1, 17),
-        update: new Date(2022, 1, 17),
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -113,16 +147,22 @@ const data: DataModel[] = [
           'Бен Аффлек',
           'Стеллан Скарсгард',
         ],
-        data: {
-          Атрибуты: 542,
-          'Связанные объекты': 12,
-        },
+        data: [
+          {
+            name: 'Связанные классы',
+            value: 1338,
+          },
+          {
+            name: 'Связанные имена',
+            value: 1338,
+          },
+        ],
       },
       {
         id: '23',
         name: 'Приключения',
-        create: new Date(2022, 1, 17),
-        update: new Date(2022, 1, 17),
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -131,16 +171,22 @@ const data: DataModel[] = [
           'Бен Аффлек',
           'Стеллан Скарсгард',
         ],
-        data: {
-          Атрибуты: 542,
-          'Связанные объекты': 12,
-        },
+        data: [
+          {
+            name: 'Связанные классы',
+            value: 1338,
+          },
+          {
+            name: 'Связанные имена',
+            value: 1338,
+          },
+        ],
       },
       {
         id: '24',
         name: 'Боевики',
-        create: new Date(2022, 1, 17),
-        update: new Date(2022, 1, 17),
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -149,10 +195,16 @@ const data: DataModel[] = [
           'Бен Аффлек',
           'Стеллан Скарсгард',
         ],
-        data: {
-          Атрибуты: 542,
-          'Связанные объекты': 12,
-        },
+        data: [
+          {
+            name: 'Связанные классы',
+            value: 1338,
+          },
+          {
+            name: 'Связанные имена',
+            value: 1338,
+          },
+        ],
       },
     ],
   },
@@ -164,32 +216,42 @@ const data: DataModel[] = [
       {
         id: '101',
         name: 'Азиатская',
-        create: new Date(2022, 1, 17),
-        update: new Date(2022, 1, 17),
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
         keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
-        data: {
-          'Связанные классы': 190,
-          'Связанные объекты': 1338,
-          Атрибуты: 312,
-        },
+        data: [
+          {
+            name: 'Связанные классы',
+            value: 1338,
+          },
+          {
+            name: 'Связанные имена',
+            value: 1338,
+          },
+        ],
       },
       {
         id: '102',
         name: 'Японская',
-        create: new Date(2022, 1, 17),
-        update: new Date(2022, 1, 17),
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
         keywords: ['Статьи'],
-        data: {
-          'Связанные классы': 678,
-          'Связанные объекты': 2378,
-          Атрибуты: 312,
-        },
+        data: [
+          {
+            name: 'Связанные классы',
+            value: 1338,
+          },
+          {
+            name: 'Связанные имена',
+            value: 1338,
+          },
+        ],
       },
       {
         id: '103',
         name: 'Австралийская',
-        create: new Date(2022, 1, 17),
-        update: new Date(2022, 1, 17),
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -198,16 +260,22 @@ const data: DataModel[] = [
           'Бен Аффлек',
           'Стеллан Скарсгард',
         ],
-        data: {
-          Атрибуты: 542,
-          'Связанные объекты': 12,
-        },
+        data: [
+          {
+            name: 'Связанные классы',
+            value: 1338,
+          },
+          {
+            name: 'Связанные имена',
+            value: 1338,
+          },
+        ],
       },
       {
         id: '104',
         name: 'Российская',
-        create: new Date(2022, 1, 17),
-        update: new Date(2022, 1, 17),
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -216,17 +284,22 @@ const data: DataModel[] = [
           'Бен Аффлек',
           'Стеллан Скарсгард',
         ],
-        data: {
-          Атрибуты: 542,
-          'Связанные объекты': 12,
-          'Связанные атрибуты': 12,
-        },
+        data: [
+          {
+            name: 'Связанные классы',
+            value: 1338,
+          },
+          {
+            name: 'Связанные имена',
+            value: 1338,
+          },
+        ],
       },
       {
         id: '105',
         name: 'Мексиканская',
-        create: new Date(2022, 1, 17),
-        update: new Date(2022, 1, 17),
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
         keywords: [
           'Мстители',
           '2012',
@@ -235,10 +308,16 @@ const data: DataModel[] = [
           'Бен Аффлек',
           'Стеллан Скарсгард',
         ],
-        data: {
-          Атрибуты: 542,
-          'Связанные объекты': 12,
-        },
+        data: [
+          {
+            name: 'Связанные классы',
+            value: 1338,
+          },
+          {
+            name: 'Связанные имена',
+            value: 1338,
+          },
+        ],
       },
     ],
   },
