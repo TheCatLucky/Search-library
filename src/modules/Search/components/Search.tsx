@@ -1,6 +1,7 @@
 import TextField from '@ff/ui-kit/lib/TextField';
 import { observer } from 'mobx-react-lite';
 import React from 'react';
+import ResultPage from '../../../components/ResultPage';
 
 import SearchStore from '../store';
 import classes from './Search.module.scss';
@@ -14,12 +15,18 @@ type Props = {
 const Search: React.FC<Props> = (props) => {
   const { store, limit } = props;
   const handleSearch: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+    store.setShowDropdown(true);
     store.setSearchValue(event.target.value);
     if (limit) {
       store.setLimit(limit);
     }
     store.setFilteredDate(store.filteredItems);
   };
+
+  if (!store.searchValue) {
+    store.setShowDropdown(false);
+  }
+
   return (
     <div className={classes.component}>
       <div className={classes.search}>
@@ -33,7 +40,8 @@ const Search: React.FC<Props> = (props) => {
           endAdornment="tune"
         />
       </div>
-      {store.searchValue && <SearchDropdown store={store} />}
+      {store.showDropdown && <SearchDropdown store={store} />}
+      {store.showResultPage && <ResultPage categories={store.filteredData} />}
     </div>
   );
 };

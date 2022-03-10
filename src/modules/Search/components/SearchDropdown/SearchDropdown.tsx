@@ -16,6 +16,10 @@ const SearchDropdown: React.FC<Props> = (props) => {
     (isEmpty, category) => category.items.length === 0 && isEmpty,
     true
   );
+  const handleResultPage = () => {
+    store.setShowResultPage(true);
+    store.setShowDropdown(false);
+  };
   if (isFilteredEmpty) {
     return (
       <div className={classes.component}>
@@ -29,7 +33,9 @@ const SearchDropdown: React.FC<Props> = (props) => {
         <SearchResult categories={store.dropdown} />
       </div>
       <div className={classes.showAll}>
-        <Button type="primary">Показать все результаты</Button>
+        <Button type="primary" onClick={handleResultPage}>
+          Показать все результаты
+        </Button>
       </div>
     </div>
   );

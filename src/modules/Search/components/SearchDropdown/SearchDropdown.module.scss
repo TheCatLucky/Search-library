@@ -1,4 +1,5 @@
 .component {
+  position: absolute;
   display: flex;
   flex-direction: column;
   width: 893px;
@@ -18,7 +19,7 @@
     }
   }
 
-  .noResult{
+  .noResult {
     margin-left: 10px;
   }
 

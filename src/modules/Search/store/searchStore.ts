@@ -1,10 +1,4 @@
-import {
-  action,
-  computed,
-  configure,
-  makeObservable,
-  observable,
-} from 'mobx';
+import { action, computed, configure, makeObservable, observable } from 'mobx';
 import { ItemModel } from '../models';
 
 import CategoryModel from '../models/CategoryModel';
@@ -22,7 +16,11 @@ class SearchStore {
 
   filteredData: CategoryModel[] = [];
 
-  itemsResult: CategoryModel[] = [];
+  dropdownData: CategoryModel[] = [];
+
+  showDropdown = false;
+
+  showResultPage = false;
 
   constructor(items: CategoryModel[] = []) {
     makeObservable(this, {
@@ -30,8 +28,12 @@ class SearchStore {
       setLimit: action.bound,
       setFilteredDate: action.bound,
       setSearchValue: action.bound,
+      setShowDropdown: action.bound,
+      setShowResultPage: action.bound,
       filteredItems: computed,
       filteredData: observable,
+      showDropdown: observable,
+      showResultPage: observable,
       searchValue: observable,
       items: observable,
     });
@@ -52,8 +54,16 @@ class SearchStore {
     this.filteredData = data;
   }
 
+  setShowDropdown(flag: boolean): void {
+    this.showDropdown = flag;
+  }
+
+  setShowResultPage(flag: boolean): void {
+    this.showResultPage = flag;
+  }
+
   setSearchValue(value: string): void {
-    this.searchValue = value;
+    this.searchValue = value.trim();
   }
 
   get filteredItems(): CategoryModel[] {
@@ -65,18 +75,17 @@ class SearchStore {
     }));
   }
   get dropdown(): CategoryModel[] {
-    console.log(this.limit);
     let itemsLength = 0;
-    this.itemsResult = [];
-    for (let i = 0; i < this.filteredData.length; i+=1) {
-      this.itemsResult.push({
+    this.dropdownData = [];
+    for (let i = 0; i < this.filteredData.length; i += 1) {
+      this.dropdownData.push({
         id: this.filteredData[i].id,
         title: this.filteredData[i].title,
         logo: this.filteredData[i].logo,
         items: [],
       });
-      for (let j = 0; j < this.filteredData[i].items.length; j+=1) {
-        this.itemsResult[i].items.push(this.filteredData[i].items[j]);
+      for (let j = 0; j < this.filteredData[i].items.length; j += 1) {
+        this.dropdownData[i].items.push(this.filteredData[i].items[j]);
         itemsLength += 1;
         if (itemsLength >= this.limit) {
           j = this.filteredData[i].items.length;
@@ -84,7 +93,7 @@ class SearchStore {
         }
       }
     }
-    return this.itemsResult;
+    return this.dropdownData;
   }
 }
 

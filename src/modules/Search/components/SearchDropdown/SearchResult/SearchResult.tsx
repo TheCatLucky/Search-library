@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Title } from '@ff/ui-kit/lib/Typography';
-import { ItemModel, CategoryModel } from '../../../models';
+import { CategoryModel } from '../../../models';
 import SearchItem from '../SearchItem';
 import classes from './SearchResult.module.scss';
 
@@ -20,7 +20,7 @@ const SearchResult: React.FC<Props> = (props) => {
               <Title bold={true} level={5} className={classes.title}>
                 {category.title}
               </Title>
-              {category.items.map((item: ItemModel) => (
+              {category.items.map((item) => (
                 <SearchItem
                   itemStore={item}
                   logo={category.logo}
