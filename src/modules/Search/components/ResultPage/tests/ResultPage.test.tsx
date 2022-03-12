@@ -6,7 +6,13 @@ import SearchStore from '../../../store';
 
 const store = new SearchStore(data);
 const renderComponent = () =>
-  render(<ResultPage categories={store.resultPageData} searchValue="и" />);
+  render(
+    <ResultPage
+      categories={store.filteredData}
+      searchValue="и"
+      resultPageAllItems={store.resultPageAllItems}
+    />
+  );
 
 describe('Компонент ResultPage', () => {
   it('отображается без ошибок', () => {

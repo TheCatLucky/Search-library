@@ -17,7 +17,8 @@ const SearchDropdown: React.FC<Props> = (props) => {
     true
   );
   const handleResultPage = () => {
-    store.setResultPageDate(store.filteredData);
+    store.setResultPageData();
+    store.setResultPageAllItems();
     store.setResultSearchValue();
     store.setShowResultPage(true);
     store.setShowDropdown(false);

@@ -2,7 +2,6 @@ import TextField from '@ff/ui-kit/lib/TextField';
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 
-
 import SearchStore from '../store';
 import ResultPage from './ResultPage';
 import classes from './Search.module.scss';
@@ -46,6 +45,7 @@ const Search: React.FC<Props> = (props) => {
         <ResultPage
           categories={store.resultPageData}
           searchValue={store.resultSearchValue}
+          resultPageAllItems={store.resultPageAllItems}
         />
       )}
     </div>

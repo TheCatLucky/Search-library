@@ -8,22 +8,54 @@ configure({
 });
 
 class SearchStore {
+  /**
+   * Входные данные
+   */
   items: CategoryModel[] = [];
 
+  /**
+   * Текущий поисковый запрос
+   */
   searchValue = '';
 
+  /**
+   * Сохраненный поисковый запрос для оторабжения на странице результатов
+   */
   resultSearchValue = '';
 
+  /**
+   * Лимит вывода по умолчанию
+   */
   limit = 10;
 
+  /**
+   * Отфильтрованные данные
+   */
   filteredData: CategoryModel[] = [];
 
+  /**
+   * Данный для выпадающего списка с учетом лимита
+   */
   dropdownData: CategoryModel[] = [];
 
+  /**
+   * Cохранённые данные для страницы результатов
+   */
   resultPageData: CategoryModel[] = [];
 
-  showDropdown = false;
+  /**
+   * Все элементы категорий
+   */
+  resultPageAllItems: ItemModel[] = [];
 
+  /**
+   * Отображение выпадающего списка
+   */
+  showDropdown = false;
+  
+  /**
+   * Отображение страницы со всеми результатами поиска
+   */
   showResultPage = false;
 
   constructor(items: CategoryModel[] = []) {
@@ -31,19 +63,21 @@ class SearchStore {
       setItems: action.bound,
       setLimit: action.bound,
       setFilteredDate: action.bound,
+      setResultSearchValue: action.bound,
+      setResultPageAllItems: action.bound,
+      setResultPageData: action.bound,
       setSearchValue: action.bound,
       setShowDropdown: action.bound,
       setShowResultPage: action.bound,
-      setResultPageDate: action.bound,
-      setResultSearchValue: action.bound,
       filteredItems: computed,
+      filteredData: observable,
+      items: observable,
+      resultPageAllItems: observable,
       resultPageData: observable,
       resultSearchValue: observable,
-      filteredData: observable,
+      searchValue: observable,
       showDropdown: observable,
       showResultPage: observable,
-      searchValue: observable,
-      items: observable,
     });
     if (items.length) {
       this.setItems(items);
@@ -62,20 +96,28 @@ class SearchStore {
     this.filteredData = data;
   }
 
-  setResultPageDate(data: CategoryModel[]): void {
-    this.resultPageData = data;
+  setResultPageAllItems(): void {
+    this.filteredData.forEach((category) =>
+      category.items.forEach((item) =>
+        this.resultPageAllItems.push({
+          ...item,
+          logo: item.logo || category.logo,
+        })
+      )
+    );
   }
 
   setShowDropdown(flag: boolean): void {
     this.showDropdown = flag;
   }
-
   setShowResultPage(flag: boolean): void {
     this.showResultPage = flag;
   }
-
   setSearchValue(value: string): void {
     this.searchValue = value.trim();
+  }
+  setResultPageData(): void {
+    this.resultPageData = this.filteredData;
   }
   setResultSearchValue(): void {
     this.resultSearchValue = this.searchValue.trim();
