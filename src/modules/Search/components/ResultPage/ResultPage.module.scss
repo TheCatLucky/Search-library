@@ -1,0 +1,48 @@
+.component {
+  .searchValue {
+    span {
+      font-style: italic;
+      font-weight: 400;
+    }
+  }
+  .tab {
+    height: 32px;
+    margin-right: 8px;
+    background-color: #e4e5e7;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: #494b50;
+      color: #ffffff;
+      transition: 0.3s;
+    }
+    span {
+      padding: 0px 4px;
+      color: #18191b;
+      background: #ebf1ff;
+      border-radius: 16px;
+    }
+  }
+  .tab_selected {
+    height: 32px;
+    margin-right: 8px;
+    background-color: #494b50;
+    border-radius: 4px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+
+    span {
+      padding: 0px 4px;
+      color: #18191b;
+      background: #ebf1ff;
+      border-radius: 16px;
+    }
+  }
+
+  .pagination {
+    margin-top: 68px;
+  }
+}

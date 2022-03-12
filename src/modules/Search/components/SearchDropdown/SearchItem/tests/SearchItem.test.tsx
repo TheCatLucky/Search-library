@@ -1,14 +1,15 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import { ItemModel } from '../../../../models';
 import SearchItem from '../SearchItem';
 
 const data: ItemModel = {
-  id: '1',
-  name: 'Актеры',
+  id: 101,
+  name: 'Кинопоиск',
   created: new Date(2022, 1, 17),
   updated: new Date(2022, 1, 17),
+  keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
   data: [
     {
       name: 'Связанные классы',
@@ -19,14 +20,16 @@ const data: ItemModel = {
       value: 1338,
     },
   ],
-  keywords: ['Имя', 'Дата рождения', 'Фильмы с участием'],
 };
-const logo = 'no logo';
-const renderComponent = () =>
-  render(<SearchItem itemStore={data} logo={logo} />);
-
+const component = <SearchItem itemStore={data} />;
 describe('Компонент SearchItem', () => {
   it('отображается без ошибок', () => {
-    expect(renderComponent).not.toThrow();
+    expect(() => render(component)).not.toThrow();
+  });
+  it('отображает данные сущности', () => {
+    render(<SearchItem itemStore={data} />);
+    expect(screen.getByText('Кинопоиск')).toBeInTheDocument();
+    expect(screen.getByText('Связанные классы:')).toBeInTheDocument();
+    expect(screen.getAllByText(1338)[0]).toBeInTheDocument();
   });
 });

@@ -12,11 +12,15 @@ class SearchStore {
 
   searchValue = '';
 
+  resultSearchValue = '';
+
   limit = 10;
 
   filteredData: CategoryModel[] = [];
 
   dropdownData: CategoryModel[] = [];
+
+  resultPageData: CategoryModel[] = [];
 
   showDropdown = false;
 
@@ -30,7 +34,11 @@ class SearchStore {
       setSearchValue: action.bound,
       setShowDropdown: action.bound,
       setShowResultPage: action.bound,
+      setResultPageDate: action.bound,
+      setResultSearchValue: action.bound,
       filteredItems: computed,
+      resultPageData: observable,
+      resultSearchValue: observable,
       filteredData: observable,
       showDropdown: observable,
       showResultPage: observable,
@@ -54,6 +62,10 @@ class SearchStore {
     this.filteredData = data;
   }
 
+  setResultPageDate(data: CategoryModel[]): void {
+    this.resultPageData = data;
+  }
+
   setShowDropdown(flag: boolean): void {
     this.showDropdown = flag;
   }
@@ -65,7 +77,13 @@ class SearchStore {
   setSearchValue(value: string): void {
     this.searchValue = value.trim();
   }
+  setResultSearchValue(): void {
+    this.resultSearchValue = this.searchValue.trim();
+  }
 
+  /**
+   * Функция фильтрации входных данных по именам
+   */
   get filteredItems(): CategoryModel[] {
     return this.items.map((category) => ({
       ...category,
@@ -74,6 +92,9 @@ class SearchStore {
       ),
     }));
   }
+  /**
+   * Функция создания данных для выпадающего списка в соответствии с заданным лимитом.
+   */
   get dropdown(): CategoryModel[] {
     let itemsLength = 0;
     this.dropdownData = [];

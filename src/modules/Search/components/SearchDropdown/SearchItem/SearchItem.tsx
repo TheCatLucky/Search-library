@@ -1,3 +1,4 @@
+import SystemName from '@ff/ui-kit/lib/SystemName';
 import React from 'react';
 
 import { ItemModel } from '../../../models';
@@ -14,9 +15,7 @@ const SearchItem: React.FC<Props> = (props) => {
   const updated = itemStore.updated.toLocaleDateString();
   return (
     <div className={classes.component}>
-      <div className={classes.logo}>
-        <img src={itemStore.logo || logo} alt="лого" />
-      </div>
+      <SystemName logo={itemStore.logo || logo} className={classes.logo} />
       <div className={classes.mainInfo}>
         <div className={classes.itemName}>{itemStore.name}</div>
         <div className={classes.shortInfo}>

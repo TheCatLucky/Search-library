@@ -7,10 +7,10 @@ import SearchDropdown from '../SearchDropdown';
 
 const store = new SearchStore(data);
 
-const renderComponent = () => render(<SearchDropdown store={store} />);
+const component = <SearchDropdown store={store} />;
 
 describe('Компонент SearchDropdown', () => {
   it('отображается без ошибок', () => {
-    expect(renderComponent).not.toThrow();
+    expect(() => render(component)).not.toThrow();
   });
 });

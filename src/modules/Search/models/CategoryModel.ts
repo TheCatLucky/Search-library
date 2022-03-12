@@ -7,7 +7,7 @@ class CategoryModel {
   /**
    * Идентификатор категори.
    */
-  id: string;
+  id: number;
 
   /**
    * Название категории.

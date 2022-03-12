@@ -1,18 +1,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-
 import ResultPage from '../ResultPage';
+import data from '../../../../../data';
+import SearchStore from '../../../store';
 
-const testId = 'testingResultPage';
-
-type ResultPageProps = React.ComponentProps<typeof ResultPage>;
-
-const renderComponent = (props: ResultPageProps = {}) => render(
-  <ResultPage
-    data-testid={testId}
-    {...props}
-  />,
-);
+const store = new SearchStore(data);
+const renderComponent = () =>
+  render(<ResultPage categories={store.resultPageData} searchValue="и" />);
 
 describe('Компонент ResultPage', () => {
   it('отображается без ошибок', () => {
