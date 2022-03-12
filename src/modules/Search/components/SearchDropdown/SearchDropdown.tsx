@@ -1,6 +1,6 @@
 import Button from '@ff/ui-kit/lib/Button';
 import { observer } from 'mobx-react-lite';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import SearchStore from '../../store';
 import SearchResult from './SearchResult';
@@ -12,6 +12,19 @@ type Props = {
 
 const SearchDropdown: React.FC<Props> = (props) => {
   const { store } = props;
+  const dropdownRef = useRef<any>(null);
+  const handleClick = (event: MouseEvent) => {
+    if (!dropdownRef.current.contains(event.target)) {
+      store.setShowDropdown(false);
+    }
+  };
+  useEffect(() => {
+    document.addEventListener('click', handleClick);
+    return () => {
+      document.removeEventListener('click', handleClick);
+    };
+  }, []);
+
   const isFilteredEmpty = store.filteredData.reduce(
     (isEmpty, category) => category.items.length === 0 && isEmpty,
     true
@@ -25,13 +38,13 @@ const SearchDropdown: React.FC<Props> = (props) => {
   };
   if (isFilteredEmpty) {
     return (
-      <div className={classes.component}>
+      <div className={classes.component} ref={dropdownRef}>
         <p className={classes.noResult}>По вашему запросу ничего не найдено</p>
       </div>
     );
   }
   return (
-    <div className={classes.component}>
+    <div className={classes.component} ref={dropdownRef}>
       <div className={classes.scroll}>
         <SearchResult categories={store.dropdown} />
       </div>

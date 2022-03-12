@@ -52,7 +52,7 @@ class SearchStore {
    * Отображение выпадающего списка
    */
   showDropdown = false;
-  
+
   /**
    * Отображение страницы со всеми результатами поиска
    */
@@ -97,6 +97,7 @@ class SearchStore {
   }
 
   setResultPageAllItems(): void {
+    this.resultPageAllItems = [];
     this.filteredData.forEach((category) =>
       category.items.forEach((item) =>
         this.resultPageAllItems.push({

@@ -26,7 +26,6 @@ const Search: React.FC<Props> = (props) => {
   if (!store.searchValue) {
     store.setShowDropdown(false);
   }
-
   return (
     <div className={classes.component}>
       <div className={classes.search}>
