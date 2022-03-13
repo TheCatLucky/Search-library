@@ -3,6 +3,7 @@ import classLogo from '../assets/class.svg';
 import objectLogo from '../assets/object.svg';
 import dataSourceLogo from '../assets/dataSource.svg';
 import uniqLogo from '../assets/UniqLogo.svg';
+
 const data: CategoryModel[] = [
   {
     id: 1,
@@ -15,6 +16,7 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         logo: uniqLogo,
+        link: 'https://www.google.com/',
         keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
         data: [
           {

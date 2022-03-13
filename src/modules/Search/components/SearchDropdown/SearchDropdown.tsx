@@ -13,22 +13,11 @@ type Props = {
 const SearchDropdown: React.FC<Props> = (props) => {
   const { store } = props;
   const dropdownRef = useRef<any>(null);
-  const handleClick = (event: MouseEvent) => {
+  const removeDropdown = (event: MouseEvent) => {
     if (!dropdownRef.current.contains(event.target)) {
       store.setShowDropdown(false);
     }
   };
-  useEffect(() => {
-    document.addEventListener('click', handleClick);
-    return () => {
-      document.removeEventListener('click', handleClick);
-    };
-  }, []);
-
-  const isFilteredEmpty = store.filteredData.reduce(
-    (isEmpty, category) => category.items.length === 0 && isEmpty,
-    true
-  );
   const handleResultPage = () => {
     store.setResultPageData();
     store.setResultPageAllItems();
@@ -36,6 +25,25 @@ const SearchDropdown: React.FC<Props> = (props) => {
     store.setShowResultPage(true);
     store.setShowDropdown(false);
   };
+  const forceSearch = (event: KeyboardEvent) => {
+    if (event.key === 'Enter') {
+      handleResultPage();
+    }
+  };
+  useEffect(() => {
+    document.addEventListener('click', removeDropdown);
+    document.addEventListener('keydown', forceSearch);
+    return () => {
+      document.removeEventListener('click', removeDropdown);
+      document.removeEventListener('keydown', forceSearch);
+    };
+  }, []);
+
+  const isFilteredEmpty = store.filteredData.reduce(
+    (isEmpty, category) => category.items.length === 0 && isEmpty,
+    true,
+  );
+
   if (isFilteredEmpty) {
     return (
       <div className={classes.component} ref={dropdownRef}>

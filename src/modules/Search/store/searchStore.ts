@@ -1,6 +1,8 @@
-import { action, computed, configure, makeObservable, observable } from 'mobx';
-import { ItemModel } from '../models';
+import {
+  action, computed, configure, makeObservable, observable,
+} from 'mobx';
 
+import { ItemModel } from '../models';
 import CategoryModel from '../models/CategoryModel';
 
 configure({
@@ -98,28 +100,28 @@ class SearchStore {
 
   setResultPageAllItems(): void {
     this.resultPageAllItems = [];
-    this.filteredData.forEach((category) =>
-      category.items.forEach((item) =>
-        this.resultPageAllItems.push({
-          ...item,
-          logo: item.logo || category.logo,
-        })
-      )
-    );
+    this.filteredData.forEach((category) => category.items.forEach((item) => this.resultPageAllItems.push({
+      ...item,
+      logo: item.logo || category.logo,
+    })));
   }
 
   setShowDropdown(flag: boolean): void {
     this.showDropdown = flag;
   }
+
   setShowResultPage(flag: boolean): void {
     this.showResultPage = flag;
   }
+
   setSearchValue(value: string): void {
     this.searchValue = value.trim();
   }
+
   setResultPageData(): void {
     this.resultPageData = this.filteredData;
   }
+
   setResultSearchValue(): void {
     this.resultSearchValue = this.searchValue.trim();
   }
@@ -130,11 +132,10 @@ class SearchStore {
   get filteredItems(): CategoryModel[] {
     return this.items.map((category) => ({
       ...category,
-      items: category.items.filter((item: ItemModel) =>
-        item.name.toLowerCase().includes(this.searchValue.toLowerCase())
-      ),
+      items: category.items.filter((item: ItemModel) => item.name.toLowerCase().includes(this.searchValue.toLowerCase())),
     }));
   }
+
   /**
    * Функция создания данных для выпадающего списка в соответствии с заданным лимитом.
    */

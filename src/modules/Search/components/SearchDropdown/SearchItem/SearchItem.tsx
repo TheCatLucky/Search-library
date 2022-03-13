@@ -7,17 +7,36 @@ import classes from './SearchItem.module.scss';
 type Props = {
   itemStore: ItemModel;
   logo?: string;
+  link?: string;
+  onItemClick?: () => void;
 };
 
 const SearchItem: React.FC<Props> = (props) => {
-  const { itemStore, logo } = props;
+  const {
+    itemStore, logo, onItemClick, link,
+  } = props;
   const created = itemStore.created.toLocaleDateString();
   const updated = itemStore.updated.toLocaleDateString();
   return (
     <div className={classes.component}>
       <SystemName logo={itemStore.logo || logo} className={classes.logo} />
       <div className={classes.mainInfo}>
-        <div className={classes.itemName}>{itemStore.name}</div>
+        <div
+          className={classes.itemName}
+          onClick={onItemClick}
+          onKeyPress={onItemClick}
+          role="button"
+          tabIndex={0}
+          style={onItemClick && { cursor: 'pointer' }}
+        >
+          {link ? (
+            <a href={link} target="_blank" rel="noreferrer">
+              {itemStore.name}
+            </a>
+          ) : (
+            <span>{itemStore.name}</span>
+          )}
+        </div>
         <div className={classes.shortInfo}>
           {itemStore.data.map((item) => (
             <p key={item.name}>

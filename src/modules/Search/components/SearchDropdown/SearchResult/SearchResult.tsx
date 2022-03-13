@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { Title } from '@ff/ui-kit/lib/Typography';
+
 import { CategoryModel } from '../../../models';
 import SearchItem from '../SearchItem';
 import classes from './SearchResult.module.scss';
@@ -17,7 +17,7 @@ const SearchResult: React.FC<Props> = (props) => {
         if (category.items.length >= 1) {
           return (
             <div className={classes.component} key={category.id}>
-              <Title bold={true} level={5} className={classes.title}>
+              <Title bold level={5} className={classes.title}>
                 {category.title}
               </Title>
               {category.items.map((item) => (

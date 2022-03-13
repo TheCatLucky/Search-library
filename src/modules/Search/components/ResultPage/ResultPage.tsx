@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { CategoryModel, ItemModel } from '../../models';
-
-import classes from './ResultPage.module.scss';
-
 import Pagination from '@ff/ui-kit/lib/Pagination';
+
+import { CategoryModel, ItemModel } from '../../models';
+import classes from './ResultPage.module.scss';
 import SearchItem from '../SearchDropdown/SearchItem';
 
 type Props = {
@@ -20,10 +19,9 @@ const ResultPage: React.FC<Props> = (props) => {
     setCurrentTab(value);
   };
 
-  const paginationItemsCount =
-    currentTab === 0
-      ? resultPageAllItems.length
-      : categories[currentTab - 1].items.length;
+  const paginationItemsCount = currentTab === 0
+    ? resultPageAllItems.length
+    : categories[currentTab - 1].items.length;
 
   return (
     <div className={classes.component}>
@@ -53,14 +51,19 @@ const ResultPage: React.FC<Props> = (props) => {
           </button>
         ))}
       </div>
-      {currentTab === 0 &&
-        resultPageAllItems
+      {currentTab === 0
+        && resultPageAllItems
           .slice(0 + 10 * (page - 1), 10 * page)
           .map((item) => (
-            <SearchItem itemStore={item} logo={item.logo} key={item.name} />
+            <SearchItem
+              itemStore={item}
+              logo={item.logo}
+              key={item.name}
+              link={item.link}
+            />
           ))}
-      {currentTab !== 0 &&
-        categories[currentTab - 1].items
+      {currentTab !== 0
+        && categories[currentTab - 1].items
           .slice(0 + 10 * (page - 1), 10 * page)
           .map((item) => (
             <SearchItem
