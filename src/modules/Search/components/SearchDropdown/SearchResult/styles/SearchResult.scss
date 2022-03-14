@@ -1,7 +1,9 @@
-.component {
-  margin-left: 24px;
+.SearchResult {
+  &-component {
+    margin-left: 24px;
+  }
 
-  .title {
+  &-title {
     margin-top: 24px;
 
     &::after {

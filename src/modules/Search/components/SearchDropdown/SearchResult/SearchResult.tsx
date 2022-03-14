@@ -3,7 +3,6 @@ import { Title } from '@ff/ui-kit/lib/Typography';
 
 import { CategoryModel } from '../../../models';
 import SearchItem from '../SearchItem';
-import classes from './SearchResult.module.scss';
 
 type Props = {
   categories: CategoryModel[];
@@ -16,16 +15,12 @@ const SearchResult: React.FC<Props> = (props) => {
       {categories.map((category) => {
         if (category.items.length >= 1) {
           return (
-            <div className={classes.component} key={category.id}>
-              <Title bold level={5} className={classes.title}>
+            <div className="SearchResult-component" key={category.id}>
+              <Title bold level={5} className="SearchResult-title">
                 {category.title}
               </Title>
               {category.items.map((item) => (
-                <SearchItem
-                  itemStore={item}
-                  logo={category.logo}
-                  key={item.id}
-                />
+                <SearchItem item={item} logo={category.logo} key={item.id} />
               ))}
             </div>
           );

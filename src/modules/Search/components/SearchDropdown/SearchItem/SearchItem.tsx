@@ -1,27 +1,26 @@
 import SystemName from '@ff/ui-kit/lib/SystemName';
 import React from 'react';
+import { Link } from '@ff/ui-kit/lib/Typography';
 
 import { ItemModel } from '../../../models';
-import classes from './SearchItem.module.scss';
-import Typography from '@ff/ui-kit/lib/Typography';
 
 type Props = {
-  itemStore: ItemModel;
+  item: ItemModel;
   logo?: string;
   link?: string;
   onItemClick?: () => void;
 };
 
 const SearchItem: React.FC<Props> = (props) => {
-  const { itemStore, logo, onItemClick, link } = props;
-  const created = itemStore.created.toLocaleDateString();
-  const updated = itemStore.updated.toLocaleDateString();
+  const { item, logo, onItemClick, link } = props;
+  const created = item.created.toLocaleDateString();
+  const updated = item.updated.toLocaleDateString();
   return (
-    <div className={classes.component}>
-      <SystemName logo={itemStore.logo || logo} className={classes.logo} />
-      <div className={classes.mainInfo}>
+    <div className="searchItem-component">
+      <SystemName logo={item.logo || logo} className="searchItem-logo" />
+      <div className="searchItem-mainInfo">
         <div
-          className={classes.itemName}
+          className="searchItem-itemName"
           onClick={onItemClick}
           onKeyPress={onItemClick}
           role="button"
@@ -29,25 +28,25 @@ const SearchItem: React.FC<Props> = (props) => {
           style={onItemClick && { cursor: 'pointer' }}
         >
           {link ? (
-            <Typography.Link href={link} target="_blank" rel="noreferrer">
-              {itemStore.name}
-            </Typography.Link>
+            <Link href={link} target="_blank" rel="noreferrer">
+              {item.name}
+            </Link>
           ) : (
-            <span>{itemStore.name}</span>
+            <span>{item.name}</span>
           )}
         </div>
-        <div className={classes.shortInfo}>
-          {itemStore.data.map((item) => (
-            <p key={item.name}>
-              {item.name}:<span>{item.value}</span>
+        <div className="searchItem-shortInfo">
+          {item.data.map((field) => (
+            <p key={field.name}>
+              {field.name}:<span>{field.value}</span>
             </p>
           ))}
         </div>
       </div>
-      <div className={classes.date}>
+      <div className="searchItem-date">
         Дата создания: <span>{created}</span>
       </div>
-      <div className={classes.date}>
+      <div className="searchItem-date">
         Последнее исправление: <span>{updated}</span>
       </div>
     </div>

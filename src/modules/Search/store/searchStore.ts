@@ -1,6 +1,4 @@
-import {
-  action, computed, configure, makeObservable, observable,
-} from 'mobx';
+import { action, computed, configure, makeObservable, observable } from 'mobx';
 
 import { ItemModel } from '../models';
 import CategoryModel from '../models/CategoryModel';
@@ -100,10 +98,14 @@ class SearchStore {
 
   setResultPageAllItems(): void {
     this.resultPageAllItems = [];
-    this.filteredData.forEach((category) => category.items.forEach((item) => this.resultPageAllItems.push({
-      ...item,
-      logo: item.logo || category.logo,
-    })));
+    this.filteredData.forEach((category) =>
+      category.items.forEach((item) =>
+        this.resultPageAllItems.push({
+          ...item,
+          logo: item.logo || category.logo,
+        })
+      )
+    );
   }
 
   setShowDropdown(flag: boolean): void {
@@ -132,14 +134,16 @@ class SearchStore {
   get filteredItems(): CategoryModel[] {
     return this.items.map((category) => ({
       ...category,
-      items: category.items.filter((item: ItemModel) => item.name.toLowerCase().includes(this.searchValue.toLowerCase())),
+      items: category.items.filter((item: ItemModel) =>
+        item.name.toLowerCase().includes(this.searchValue.toLowerCase())
+      ),
     }));
   }
 
   /**
    * Функция создания данных для выпадающего списка в соответствии с заданным лимитом.
    */
-  get dropdown(): CategoryModel[] {
+  get categories(): CategoryModel[] {
     let itemsLength = 0;
     this.dropdownData = [];
     for (let i = 0; i < this.filteredData.length; i += 1) {

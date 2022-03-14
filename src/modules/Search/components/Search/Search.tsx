@@ -2,10 +2,9 @@ import TextField from '@ff/ui-kit/lib/TextField';
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 
-import SearchStore from '../store';
-import ResultPage from './ResultPage';
-import classes from './Search.module.scss';
-import SearchDropdown from './SearchDropdown';
+import SearchStore from '../../store';
+import ResultPage from '../ResultPage';
+import SearchDropdown from '../SearchDropdown';
 
 type Props = {
   store: SearchStore;
@@ -27,10 +26,10 @@ const Search: React.FC<Props> = (props) => {
     store.setShowDropdown(false);
   }
   return (
-    <div className={classes.component}>
-      <div className={classes.search}>
+    <div className="Search-component">
+      <div className="Search-search">
         <TextField
-          className={classes.searchField}
+          className="Search-searchField"
           type="text"
           value={store.searchValue}
           onChange={handleSearch}

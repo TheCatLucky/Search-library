@@ -3,8 +3,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import Search from '../Search';
-import data from '../../../../data';
-import SearchStore from '../../store';
+import data from '../../../../../data';
+import SearchStore from '../../../store';
 
 const store = new SearchStore(data);
 const search = <Search store={store} limit={10} />;

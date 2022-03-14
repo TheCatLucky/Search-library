@@ -1,5 +1,6 @@
 @import-normalize;
-@import "@ff/ui-kit/lib/styles/fns.theme.css";
+
+@import "./modules/Search/styles/index.scss";
 @font-face {
   font-family: "Roboto";
   src: url(./assets/Roboto-Bold.ttf);

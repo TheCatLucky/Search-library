@@ -1,0 +1,15 @@
+.Search {
+  &-component {
+    width: 100%;
+  }
+  &-searchField {
+    width: 475px;
+    height: 40px;
+    font-size: 16px;
+  }
+  &-search {
+    position: relative;
+    width: 475px;
+    height: 40px;
+  }
+}

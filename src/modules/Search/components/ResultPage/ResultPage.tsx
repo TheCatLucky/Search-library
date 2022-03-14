@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Pagination from '@ff/ui-kit/lib/Pagination';
+import Button from '@ff/ui-kit/lib/Button';
+import { Title } from '@ff/ui-kit/lib/Typography';
 
 import { CategoryModel, ItemModel } from '../../models';
-import classes from './ResultPage.module.scss';
 import SearchItem from '../SearchDropdown/SearchItem';
-import Button from '@ff/ui-kit/lib/Button';
-import Typography from '@ff/ui-kit/lib/Typography';
 
 type Props = {
   categories: CategoryModel[];
@@ -27,18 +26,17 @@ const ResultPage: React.FC<Props> = (props) => {
       : categories[currentTab - 1].items.length;
 
   return (
-    <div className={classes.component}>
+    <div>
       <div>
-        <Typography.Title level={4} bold={true} className={classes.searchValue}>
+        <Title className="ResultPage-searchValue">
           Результаты поиска по : <span>«{searchValue}»</span>
-        </Typography.Title>
-        {/* <h2 className={classes.searchValue}>
-          Результаты поиска по : <span>«{searchValue}»</span>
-        </h2> */}
+        </Title>
       </div>
       <div>
         <Button
-          className={currentTab === 0 ? classes.tab_selected : classes.tab}
+          className={
+            currentTab === 0 ? 'ResultPage-tab_selected' : 'ResultPage-tab'
+          }
           onClick={() => handleButtonClick(0)}
         >
           Все <span>{resultPageAllItems.length}</span>
@@ -46,7 +44,9 @@ const ResultPage: React.FC<Props> = (props) => {
         {categories.map((category) => (
           <Button
             className={
-              currentTab === category.id ? classes.tab_selected : classes.tab
+              currentTab === category.id
+                ? 'ResultPage-tab_selected'
+                : 'ResultPage-tab'
             }
             key={category.id}
             onClick={() => handleButtonClick(category.id)}
@@ -60,7 +60,7 @@ const ResultPage: React.FC<Props> = (props) => {
           .slice(0 + 10 * (page - 1), 10 * page)
           .map((item) => (
             <SearchItem
-              itemStore={item}
+              item={item}
               logo={item.logo}
               key={item.name}
               link={item.link}
@@ -71,7 +71,7 @@ const ResultPage: React.FC<Props> = (props) => {
           .slice(0 + 10 * (page - 1), 10 * page)
           .map((item) => (
             <SearchItem
-              itemStore={item}
+              item={item}
               logo={categories[currentTab - 1].logo}
               key={item.id}
               link={item.link}
@@ -83,7 +83,7 @@ const ResultPage: React.FC<Props> = (props) => {
         perPage={10}
         currentPage={page}
         onChangeCurrentPage={setPage}
-        className={classes.pagination}
+        className="ResultPage-pagination"
       />
     </div>
   );
