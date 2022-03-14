@@ -1,5 +1,7 @@
 .component {
   .searchValue {
+    color: #18191b;
+    margin: 24px 0px;
     span {
       font-style: italic;
       font-weight: 400;
@@ -19,10 +21,12 @@
       transition: 0.3s;
     }
     span {
-      padding: 0px 4px;
-      color: #18191b;
-      background: #ebf1ff;
-      border-radius: 16px;
+      span {
+        padding: 0px 4px;
+        color: #18191b;
+        background: #ebf1ff;
+        border-radius: 16px;
+      }
     }
   }
   .tab_selected {
@@ -35,10 +39,12 @@
     cursor: pointer;
 
     span {
-      padding: 0px 4px;
-      color: #18191b;
-      background: #ebf1ff;
-      border-radius: 16px;
+      span {
+        padding: 0px 4px;
+        color: #18191b;
+        background: #ebf1ff;
+        border-radius: 16px;
+      }
     }
   }
 

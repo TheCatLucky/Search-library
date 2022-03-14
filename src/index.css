@@ -3,8 +3,8 @@
 @font-face {
   font-family: "Roboto";
   src: url(./assets/Roboto-Bold.ttf);
-  src: url(./assets/Roboto-Regular.ttf);
   src: url(./assets/Roboto-Italic.ttf);
+  src: url(./assets/Roboto-Regular.ttf);
 }
 body {
   height: 100%;
@@ -14,7 +14,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 iframe {
   display: none;

@@ -4,6 +4,8 @@ import Pagination from '@ff/ui-kit/lib/Pagination';
 import { CategoryModel, ItemModel } from '../../models';
 import classes from './ResultPage.module.scss';
 import SearchItem from '../SearchDropdown/SearchItem';
+import Button from '@ff/ui-kit/lib/Button';
+import Typography from '@ff/ui-kit/lib/Typography';
 
 type Props = {
   categories: CategoryModel[];
@@ -19,28 +21,30 @@ const ResultPage: React.FC<Props> = (props) => {
     setCurrentTab(value);
   };
 
-  const paginationItemsCount = currentTab === 0
-    ? resultPageAllItems.length
-    : categories[currentTab - 1].items.length;
+  const paginationItemsCount =
+    currentTab === 0
+      ? resultPageAllItems.length
+      : categories[currentTab - 1].items.length;
 
   return (
     <div className={classes.component}>
       <div>
-        <h2 className={classes.searchValue}>
+        <Typography.Title level={4} bold={true} className={classes.searchValue}>
           Результаты поиска по : <span>«{searchValue}»</span>
-        </h2>
+        </Typography.Title>
+        {/* <h2 className={classes.searchValue}>
+          Результаты поиска по : <span>«{searchValue}»</span>
+        </h2> */}
       </div>
       <div>
-        <button
-          type="button"
+        <Button
           className={currentTab === 0 ? classes.tab_selected : classes.tab}
           onClick={() => handleButtonClick(0)}
         >
           Все <span>{resultPageAllItems.length}</span>
-        </button>
+        </Button>
         {categories.map((category) => (
-          <button
-            type="button"
+          <Button
             className={
               currentTab === category.id ? classes.tab_selected : classes.tab
             }
@@ -48,11 +52,11 @@ const ResultPage: React.FC<Props> = (props) => {
             onClick={() => handleButtonClick(category.id)}
           >
             {category.title} <span>{category.items.length}</span>
-          </button>
+          </Button>
         ))}
       </div>
-      {currentTab === 0
-        && resultPageAllItems
+      {currentTab === 0 &&
+        resultPageAllItems
           .slice(0 + 10 * (page - 1), 10 * page)
           .map((item) => (
             <SearchItem
@@ -62,14 +66,15 @@ const ResultPage: React.FC<Props> = (props) => {
               link={item.link}
             />
           ))}
-      {currentTab !== 0
-        && categories[currentTab - 1].items
+      {currentTab !== 0 &&
+        categories[currentTab - 1].items
           .slice(0 + 10 * (page - 1), 10 * page)
           .map((item) => (
             <SearchItem
               itemStore={item}
               logo={categories[currentTab - 1].logo}
               key={item.id}
+              link={item.link}
             />
           ))}
       <Pagination

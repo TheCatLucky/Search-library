@@ -3,6 +3,7 @@ import React from 'react';
 
 import { ItemModel } from '../../../models';
 import classes from './SearchItem.module.scss';
+import Typography from '@ff/ui-kit/lib/Typography';
 
 type Props = {
   itemStore: ItemModel;
@@ -12,9 +13,7 @@ type Props = {
 };
 
 const SearchItem: React.FC<Props> = (props) => {
-  const {
-    itemStore, logo, onItemClick, link,
-  } = props;
+  const { itemStore, logo, onItemClick, link } = props;
   const created = itemStore.created.toLocaleDateString();
   const updated = itemStore.updated.toLocaleDateString();
   return (
@@ -30,9 +29,9 @@ const SearchItem: React.FC<Props> = (props) => {
           style={onItemClick && { cursor: 'pointer' }}
         >
           {link ? (
-            <a href={link} target="_blank" rel="noreferrer">
+            <Typography.Link href={link} target="_blank" rel="noreferrer">
               {itemStore.name}
-            </a>
+            </Typography.Link>
           ) : (
             <span>{itemStore.name}</span>
           )}
