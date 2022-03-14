@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { ItemModel } from '../../../../models';
+import { ItemModel } from '../../../models';
 import SearchItem from '../SearchItem';
 
 const data: ItemModel = {
@@ -21,13 +21,13 @@ const data: ItemModel = {
     },
   ],
 };
-const component = <SearchItem itemStore={data} />;
+const component = <SearchItem item={data} />;
 describe('Компонент SearchItem', () => {
   it('отображается без ошибок', () => {
     expect(() => render(component)).not.toThrow();
   });
   it('отображает данные сущности', () => {
-    render(<SearchItem itemStore={data} />);
+    render(<SearchItem item={data} />);
     expect(screen.getByText('Кинопоиск')).toBeInTheDocument();
     expect(screen.getByText('Связанные классы:')).toBeInTheDocument();
     expect(screen.getAllByText(1338)[0]).toBeInTheDocument();

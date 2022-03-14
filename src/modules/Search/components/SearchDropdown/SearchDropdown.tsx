@@ -2,23 +2,32 @@ import Button from '@ff/ui-kit/lib/Button';
 import { observer } from 'mobx-react-lite';
 import React from 'react';
 
+import { ItemModel } from '../../models';
 import SearchStore from '../../store';
-import SearchResult from './SearchResult';
+import SearchResult from '../SearchResult';
 
 type Props = {
   store: SearchStore;
+  setShowDropdown: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowResultPage: React.Dispatch<React.SetStateAction<boolean>>;
+  increaseFrequency: (item: ItemModel) => void;
+  onItemClick: (item: ItemModel) => void;
 };
 
-const SearchDropdown: React.FC<Props> = ({ store }) => {
+const SearchDropdown: React.FC<Props> = (props) => {
   const {
-    setResultPageData,
-    setResultPageAllItems,
-    setResultSearchValue,
-    setShowResultPage,
+    store,
     setShowDropdown,
-  } = store;
+    setShowResultPage,
+    onItemClick,
+    increaseFrequency,
+  } = props;
+  const { setResultPageData, setResultPageAllItems, setResultSearchValue } =
+    store;
 
   const handleResultPage = () => {
+    // Поправить костыль
+    //store.setFilteredDate(store.filteredItems);
     setResultPageData();
     setResultPageAllItems();
     setResultSearchValue();
@@ -33,8 +42,8 @@ const SearchDropdown: React.FC<Props> = ({ store }) => {
 
   if (isFilteredEmpty) {
     return (
-      <div className="SearchDropdown-component">
-        <p className="SearchDropdown-noResult">
+      <div className="searchDropdown-component">
+        <p className="searchDropdown-noResult">
           По вашему запросу ничего не найдено
         </p>
       </div>
@@ -42,11 +51,15 @@ const SearchDropdown: React.FC<Props> = ({ store }) => {
   }
 
   return (
-    <div className="SearchDropdown-component">
-      <div className="SearchDropdown-scroll">
-        <SearchResult categories={store.categories} />
+    <div className="searchDropdown-component">
+      <div className="searchDropdown-scroll">
+        <SearchResult
+          categories={store.dropdownWithLimit}
+          onItemClick={onItemClick}
+          increaseFrequency={increaseFrequency}
+        />
       </div>
-      <div className="SearchDropdown-showAll">
+      <div className="searchDropdown-showAll">
         <Button type="primary" onClick={handleResultPage}>
           Показать все результаты
         </Button>

@@ -15,6 +15,7 @@ const data: CategoryModel[] = [
         name: 'Кинопоиск',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         logo: uniqLogo,
         link: 'https://www.google.com/',
         keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
@@ -35,6 +36,8 @@ const data: CategoryModel[] = [
         name: 'Википедия',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
+        link: 'https://www.google.com/',
         keywords: ['Статьи'],
         data: [
           {
@@ -52,6 +55,7 @@ const data: CategoryModel[] = [
         name: 'Вконтакте',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -76,6 +80,7 @@ const data: CategoryModel[] = [
         name: 'Одноклассники',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -100,6 +105,7 @@ const data: CategoryModel[] = [
         name: 'Одноклассник',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -124,6 +130,7 @@ const data: CategoryModel[] = [
         name: 'Одна буква И',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -148,6 +155,7 @@ const data: CategoryModel[] = [
         name: 'Две буквы И',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -172,6 +180,7 @@ const data: CategoryModel[] = [
         name: 'Три Буквы и',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -196,6 +205,7 @@ const data: CategoryModel[] = [
         name: 'Четыре буквы и',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -220,6 +230,7 @@ const data: CategoryModel[] = [
         name: 'Пять букв и!',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -244,6 +255,7 @@ const data: CategoryModel[] = [
         name: 'Неизвестно',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -268,6 +280,7 @@ const data: CategoryModel[] = [
         name: 'Инкогнито',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -295,10 +308,11 @@ const data: CategoryModel[] = [
     logo: objectLogo,
     items: [
       {
-        id: 101,
+        id: 201,
         name: 'Триллеры',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
         data: [
           {
@@ -312,10 +326,11 @@ const data: CategoryModel[] = [
         ],
       },
       {
-        id: 102,
+        id: 202,
         name: 'Комедии',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: ['Статьи'],
         data: [
           {
@@ -329,10 +344,11 @@ const data: CategoryModel[] = [
         ],
       },
       {
-        id: 103,
+        id: 203,
         name: 'Ужасы',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -353,10 +369,11 @@ const data: CategoryModel[] = [
         ],
       },
       {
-        id: 104,
+        id: 204,
         name: 'Приключения',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -377,10 +394,11 @@ const data: CategoryModel[] = [
         ],
       },
       {
-        id: 105,
+        id: 205,
         name: 'Боевики',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -408,10 +426,11 @@ const data: CategoryModel[] = [
     logo: dataSourceLogo,
     items: [
       {
-        id: 101,
+        id: 301,
         name: 'Азиатская',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
         data: [
           {
@@ -425,10 +444,11 @@ const data: CategoryModel[] = [
         ],
       },
       {
-        id: 102,
+        id: 302,
         name: 'Японская',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: ['Статьи'],
         data: [
           {
@@ -442,10 +462,11 @@ const data: CategoryModel[] = [
         ],
       },
       {
-        id: 103,
+        id: 303,
         name: 'Австралийская',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -466,10 +487,11 @@ const data: CategoryModel[] = [
         ],
       },
       {
-        id: 104,
+        id: 304,
         name: 'Российская',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',
@@ -490,10 +512,11 @@ const data: CategoryModel[] = [
         ],
       },
       {
-        id: 105,
+        id: 305,
         name: 'Мексиканская',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 0,
         keywords: [
           'Мстители',
           '2012',

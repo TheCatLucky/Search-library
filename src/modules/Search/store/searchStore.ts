@@ -1,4 +1,6 @@
-import { action, computed, configure, makeObservable, observable } from 'mobx';
+import {
+  action, computed, configure, makeObservable, observable,
+} from 'mobx';
 
 import { ItemModel } from '../models';
 import CategoryModel from '../models/CategoryModel';
@@ -48,16 +50,6 @@ class SearchStore {
    */
   resultPageAllItems: ItemModel[] = [];
 
-  /**
-   * Отображение выпадающего списка
-   */
-  showDropdown = false;
-
-  /**
-   * Отображение страницы со всеми результатами поиска
-   */
-  showResultPage = false;
-
   constructor(items: CategoryModel[] = []) {
     makeObservable(this, {
       setItems: action.bound,
@@ -67,8 +59,7 @@ class SearchStore {
       setResultPageAllItems: action.bound,
       setResultPageData: action.bound,
       setSearchValue: action.bound,
-      setShowDropdown: action.bound,
-      setShowResultPage: action.bound,
+      increaseFrequency: action.bound,
       filteredItems: computed,
       filteredData: observable,
       items: observable,
@@ -76,8 +67,6 @@ class SearchStore {
       resultPageData: observable,
       resultSearchValue: observable,
       searchValue: observable,
-      showDropdown: observable,
-      showResultPage: observable,
     });
     if (items.length) {
       this.setItems(items);
@@ -93,27 +82,15 @@ class SearchStore {
   }
 
   setFilteredDate(data: CategoryModel[]): void {
+    data.forEach((category) => category.items.sort((a, b) => b.frequency - a.frequency));
     this.filteredData = data;
   }
 
   setResultPageAllItems(): void {
-    this.resultPageAllItems = [];
-    this.filteredData.forEach((category) =>
-      category.items.forEach((item) =>
-        this.resultPageAllItems.push({
-          ...item,
-          logo: item.logo || category.logo,
-        })
-      )
-    );
-  }
-
-  setShowDropdown(flag: boolean): void {
-    this.showDropdown = flag;
-  }
-
-  setShowResultPage(flag: boolean): void {
-    this.showResultPage = flag;
+    this.resultPageAllItems = this.filteredData.flatMap((category) => category.items.map((item) => ({
+      ...item,
+      logo: item.logo || category.logo,
+    })));
   }
 
   setSearchValue(value: string): void {
@@ -128,22 +105,29 @@ class SearchStore {
     this.resultSearchValue = this.searchValue.trim();
   }
 
+  increaseFrequency(incomeItem: ItemModel): void {
+    this.items.forEach((category) => category.items.forEach((item) => {
+      if (item.id === incomeItem.id) {
+        // ошибка присваивания значения объекта
+        item.frequency += 1;
+      }
+    }));
+  }
+
   /**
    * Функция фильтрации входных данных по именам
    */
   get filteredItems(): CategoryModel[] {
     return this.items.map((category) => ({
       ...category,
-      items: category.items.filter((item: ItemModel) =>
-        item.name.toLowerCase().includes(this.searchValue.toLowerCase())
-      ),
+      items: category.items.filter((item: ItemModel) => item.name.toLowerCase().includes(this.searchValue.toLowerCase())),
     }));
   }
 
   /**
-   * Функция создания данных для выпадающего списка в соответствии с заданным лимитом.
+   * Функция создания данных для выпадающего списка в соответствии с заданным лимитом и частотой обращений.
    */
-  get categories(): CategoryModel[] {
+  get dropdownWithLimit(): CategoryModel[] {
     let itemsLength = 0;
     this.dropdownData = [];
     for (let i = 0; i < this.filteredData.length; i += 1) {
@@ -162,6 +146,7 @@ class SearchStore {
         }
       }
     }
+    this.dropdownData.forEach((category) => category.items.sort((a, b) => b.frequency - a.frequency));
     return this.dropdownData;
   }
 }

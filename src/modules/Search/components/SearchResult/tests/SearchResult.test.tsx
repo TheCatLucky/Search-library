@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import SearchStore from '../../../../store';
+import SearchStore from '../../../store';
 import SearchResult from '../SearchResult';
 
 const data = [
@@ -15,6 +15,7 @@ const data = [
         name: 'Кинопоиск',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
+        frequency: 1,
         keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
         data: [
           {

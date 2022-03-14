@@ -1,36 +1,40 @@
 import SystemName from '@ff/ui-kit/lib/SystemName';
 import React from 'react';
-import { Link } from '@ff/ui-kit/lib/Typography';
 
-import { ItemModel } from '../../../models';
+import { ItemModel } from '../../models';
 
 type Props = {
   item: ItemModel;
+  increaseFrequency: (item: ItemModel) => void;
   logo?: string;
   link?: string;
-  onItemClick?: () => void;
+  onItemClick: (item: ItemModel) => void;
 };
 
 const SearchItem: React.FC<Props> = (props) => {
-  const { item, logo, onItemClick, link } = props;
+  const {
+    item, logo, onItemClick, link, increaseFrequency,
+  } = props;
   const created = item.created.toLocaleDateString();
   const updated = item.updated.toLocaleDateString();
+  const handleClick = () => {
+    increaseFrequency(item);
+    onItemClick(item);
+  };
   return (
     <div className="searchItem-component">
       <SystemName logo={item.logo || logo} className="searchItem-logo" />
       <div className="searchItem-mainInfo">
-        <div
-          className="searchItem-itemName"
-          onClick={onItemClick}
-          onKeyPress={onItemClick}
-          role="button"
-          tabIndex={0}
-          style={onItemClick && { cursor: 'pointer' }}
-        >
+        <div className="searchItem-itemName">
           {link ? (
-            <Link href={link} target="_blank" rel="noreferrer">
+            <a
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+              onClick={handleClick}
+            >
               {item.name}
-            </Link>
+            </a>
           ) : (
             <span>{item.name}</span>
           )}

@@ -1,9 +1,10 @@
-.SearchDropdown {
+.searchDropdown {
   &-component {
     position: absolute;
     z-index: 999;
     display: flex;
     flex-direction: column;
+    margin-top: 4px;
     width: 893px;
     max-height: 893px;
     background: #ffffff;

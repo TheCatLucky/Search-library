@@ -23,6 +23,11 @@ class ItemModel {
   updated: Date;
 
   /**
+   * Частота выбора элемента категории.
+   */
+  frequency: number;
+
+  /**
    * Ключевые слова, для более детального поиска.
    */
   keywords?: string[];
@@ -50,6 +55,7 @@ class ItemModel {
     this.name = data.name;
     this.created = data.created;
     this.updated = data.updated;
+    this.frequency = data.frequency;
     this.data = data.data;
   }
 }
