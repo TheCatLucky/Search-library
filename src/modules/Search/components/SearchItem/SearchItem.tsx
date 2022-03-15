@@ -1,3 +1,4 @@
+import { Link } from '@ff/ui-kit/lib/Typography';
 import React from 'react';
 
 import { ItemModel } from '../../models';
@@ -26,14 +27,14 @@ const SearchItem: React.FC<Props> = (props) => {
       <div className="searchItem-mainInfo">
         <div className="searchItem-itemName">
           {link ? (
-            <a
+            <Link
               href={link}
               target="_blank"
               rel="noreferrer"
               onClick={handleClick}
             >
               {item.name}
-            </a>
+            </Link>
           ) : (
             <span>{item.name}</span>
           )}
