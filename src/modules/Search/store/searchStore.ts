@@ -34,11 +34,6 @@ class SearchStore {
   filteredData: CategoryModel[] = [];
 
   /**
-   * Данные для выпадающего списка с учетом лимита.
-   */
-  dropdownData: CategoryModel[] = [];
-
-  /**
    * Cохранённые данные для страницы результатов.
    */
   resultPageData: CategoryModel[] = [];
@@ -105,17 +100,6 @@ class SearchStore {
   setResultSearchValue(): void {
     this.resultSearchValue = this.searchValue.trim();
   }
-
-  /* increaseFrequency(incomeItem: ItemModel): void {
-    this.items.forEach((category) =>
-      category.items.forEach((item) => {
-        if (item.id === incomeItem.id) {
-          // ошибка присваивания значения объекта
-          item.frequency += 1;
-        }
-      })
-    );
-  } */
 
   /**
    * Функция фильтрации входных данных по именам.
