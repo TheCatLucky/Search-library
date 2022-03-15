@@ -12,8 +12,18 @@
   }
 
   &-noResult {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     color: #18191b;
-    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 13px 24px;
+
+    img {
+      height: 40px;
+      margin-right: 16px;
+    }
   }
 
   &-scroll {

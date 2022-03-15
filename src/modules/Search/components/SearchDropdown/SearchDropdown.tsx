@@ -2,6 +2,7 @@ import Button from '@ff/ui-kit/lib/Button';
 import { observer } from 'mobx-react-lite';
 import React, { useEffect, useRef } from 'react';
 
+import noResult from '../../../../assets/NoResult.svg';
 import { ItemModel } from '../../models';
 import SearchStore from '../../store';
 import SearchResult from '../SearchResult';
@@ -58,9 +59,10 @@ const SearchDropdown: React.FC<Props> = (props) => {
   if (isFilteredEmpty) {
     return (
       <div className="searchDropdown-component" ref={dropdownRef}>
-        <p className="searchDropdown-noResult">
-          По вашему запросу ничего не найдено
-        </p>
+        <div className="searchDropdown-noResult">
+          <img src={noResult} alt="Нет результата" />
+          <p>По вашему запросу ничего не найдено</p>
+        </div>
       </div>
     );
   }
