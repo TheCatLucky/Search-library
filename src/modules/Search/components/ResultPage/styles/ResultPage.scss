@@ -1,12 +1,19 @@
+$backgroundNotSelected: #ebf1ff;
+$backgroundSelected: #494b50;
+$fontColor: #18191b;
 .resultPage {
+  padding-left: 32px;
+
   &-searchValue {
     margin: 24px 0px;
-    color: #18191b;
+    color: $fontColor;
+
     span {
       font-style: italic;
       font-weight: 400;
     }
   }
+
   &-tab {
     height: 32px;
     margin-right: 8px;
@@ -14,30 +21,29 @@
     border-radius: 4px;
     border: none !important;
     cursor: pointer;
+
     &:hover {
-      background: #494b50;
+      background: $backgroundSelected;
       color: #ffffff;
       transition: 0.3s;
     }
-    span {
-      span {
-        padding: 0px 4px;
-        color: #18191b;
-        background: #ebf1ff;
-        border-radius: 16px;
-      }
+
+    span span {
+      padding: 0px 4px;
+      color: $fontColor;
+      background: $backgroundNotSelected;
+      border-radius: 16px;
     }
 
     &_selected {
-      background-color: #494b50 !important;
+      background-color: $backgroundSelected !important;
       color: #ffffff !important;
-      span {
-        span {
-          padding: 0px 4px;
-          color: #18191b;
-          background: #ebf1ff;
-          border-radius: 16px;
-        }
+
+      span span {
+        padding: 0px 4px;
+        color: $fontColor;
+        background: $backgroundNotSelected;
+        border-radius: 16px;
       }
     }
   }

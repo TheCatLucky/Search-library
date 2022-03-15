@@ -9,6 +9,8 @@ const data: ItemModel = {
   name: 'Кинопоиск',
   created: new Date(2022, 1, 17),
   updated: new Date(2022, 1, 17),
+  frequency: 0,
+  link: 'https://dev.gnivc.ru/',
   keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
   data: [
     {
@@ -21,13 +23,13 @@ const data: ItemModel = {
     },
   ],
 };
-const component = <SearchItem item={data} />;
+const component = <SearchItem item={data} onItemClick={() => {}} />;
 describe('Компонент SearchItem', () => {
   it('отображается без ошибок', () => {
     expect(() => render(component)).not.toThrow();
   });
   it('отображает данные сущности', () => {
-    render(<SearchItem item={data} />);
+    render(<SearchItem item={data} onItemClick={() => {}} />);
     expect(screen.getByText('Кинопоиск')).toBeInTheDocument();
     expect(screen.getByText('Связанные классы:')).toBeInTheDocument();
     expect(screen.getAllByText(1338)[0]).toBeInTheDocument();

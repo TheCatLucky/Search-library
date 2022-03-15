@@ -1,3 +1,6 @@
+$fontColorBlack: #18191b;
+$fontColorBlue: #0057ff;
+$infoFontColor: #797d86;
 .searchItem {
   &-component {
     display: flex;
@@ -19,11 +22,11 @@
 
   &-itemName {
     font-size: 16px;
-    color: #18191b;
+    color: $fontColorBlack;
 
     a {
       text-decoration: none;
-      color: #0057ff;
+      color: $fontColorBlue;
     }
   }
 
@@ -31,7 +34,7 @@
     display: flex;
     flex-flow: row wrap;
     font-size: 14px;
-    color: #797d86;
+    color: $infoFontColor;
 
     p {
       margin-top: 4px;
@@ -40,7 +43,7 @@
 
     span {
       padding-right: 16px;
-      color: #18191b;
+      color: $fontColorBlack;
     }
   }
 
@@ -48,11 +51,11 @@
     display: flex;
     flex-direction: column;
     font-size: 14px;
-    color: #797d86;
+    color: $infoFontColor;
     margin: 0px 24px 0px 32px;
 
     span {
-      color: #18191b;
+      color: $fontColorBlack;
     }
   }
 }

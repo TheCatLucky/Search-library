@@ -28,6 +28,11 @@ class ItemModel {
   frequency: number;
 
   /**
+   * Ссылка для перехода на элемент.
+   */
+  link: string;
+
+  /**
    * Ключевые слова, для более детального поиска.
    */
   keywords?: string[];
@@ -36,11 +41,6 @@ class ItemModel {
    * Лого элемента категории.
    */
   logo?: string;
-
-  /**
-   * Ссылка для перехода на элемент.
-   */
-  link?: string;
 
   /**
    * Данные, который пользователь вводит для отображения.
@@ -56,6 +56,7 @@ class ItemModel {
     this.created = data.created;
     this.updated = data.updated;
     this.frequency = data.frequency;
+    this.link = data.link;
     this.data = data.data;
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 import data from '../../../../../data';
 import SearchStore from '../../../store';
@@ -12,7 +12,6 @@ const component = (
     store={store}
     setShowDropdown={() => {}}
     setShowResultPage={() => {}}
-    increaseFrequency={() => {}}
     onItemClick={() => {}}
   />
 );
@@ -20,5 +19,11 @@ const component = (
 describe('Компонент SearchDropdown', () => {
   it('отображается без ошибок', () => {
     expect(() => render(component)).not.toThrow();
+  });
+  it('отображает названия заголовков', () => {
+    render(component);
+    expect(
+      screen.getByText('По вашему запросу ничего не найдено')
+    ).toBeInTheDocument();
   });
 });

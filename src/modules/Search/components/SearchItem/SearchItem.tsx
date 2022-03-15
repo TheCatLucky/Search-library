@@ -1,29 +1,28 @@
-import SystemName from '@ff/ui-kit/lib/SystemName';
 import React from 'react';
 
 import { ItemModel } from '../../models';
 
 type Props = {
   item: ItemModel;
-  increaseFrequency: (item: ItemModel) => void;
   logo?: string;
   link?: string;
   onItemClick: (item: ItemModel) => void;
 };
 
 const SearchItem: React.FC<Props> = (props) => {
-  const {
-    item, logo, onItemClick, link, increaseFrequency,
-  } = props;
+  const { item, logo, onItemClick, link } = props;
   const created = item.created.toLocaleDateString();
   const updated = item.updated.toLocaleDateString();
+
   const handleClick = () => {
-    increaseFrequency(item);
     onItemClick(item);
   };
+
   return (
     <div className="searchItem-component">
-      <SystemName logo={item.logo || logo} className="searchItem-logo" />
+      <div className="searchItem-logo">
+        <img src={item.logo || logo} alt="Лого" />
+      </div>
       <div className="searchItem-mainInfo">
         <div className="searchItem-itemName">
           {link ? (

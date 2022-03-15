@@ -7,7 +7,14 @@ import data from '../../../../../data';
 import SearchStore from '../../../store';
 
 const store = new SearchStore(data);
-const search = <Search store={store} limit={10} />;
+const search = (
+  <Search
+    store={store}
+    limit={10}
+    onItemClick={() => {}}
+    showResultPage={() => {}}
+  />
+);
 
 describe('Компонент Search', () => {
   it('отображается без ошибок', () => {
@@ -17,11 +24,11 @@ describe('Компонент Search', () => {
   it('работает поиск', () => {
     render(search);
     const userScreen = screen.getByPlaceholderText('Поиск...');
-    userEvent.type(userScreen, 'и');
-    expect(screen.getByText('Википедия')).toBeInTheDocument();
+    userEvent.type(userScreen, 'а');
+    expect(screen.getAllByText(/дата/i)[0]).toBeInTheDocument();
     userEvent.type(userScreen, 'Z');
     expect(
-      screen.getByText('По вашему запросу ничего не найдено'),
+      screen.getByText('По вашему запросу ничего не найдено')
     ).toBeInTheDocument();
   });
 });

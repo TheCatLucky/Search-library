@@ -1,6 +1,6 @@
 import Button from '@ff/ui-kit/lib/Button';
 import { observer } from 'mobx-react-lite';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { ItemModel } from '../../models';
 import SearchStore from '../../store';
@@ -10,30 +10,45 @@ type Props = {
   store: SearchStore;
   setShowDropdown: React.Dispatch<React.SetStateAction<boolean>>;
   setShowResultPage: React.Dispatch<React.SetStateAction<boolean>>;
-  increaseFrequency: (item: ItemModel) => void;
   onItemClick: (item: ItemModel) => void;
 };
 
 const SearchDropdown: React.FC<Props> = (props) => {
-  const {
-    store,
-    setShowDropdown,
-    setShowResultPage,
-    onItemClick,
-    increaseFrequency,
-  } = props;
+  const { store, setShowDropdown, setShowResultPage, onItemClick } = props;
   const { setResultPageData, setResultPageAllItems, setResultSearchValue } =
     store;
 
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
   const handleResultPage = () => {
-    // Поправить костыль
-    //store.setFilteredDate(store.filteredItems);
     setResultPageData();
     setResultPageAllItems();
     setResultSearchValue();
     setShowResultPage(true);
     setShowDropdown(false);
   };
+
+  const removeDropdown = (event: MouseEvent) => {
+    if (!dropdownRef.current?.contains(event.target as HTMLElement)) {
+      setShowDropdown(false);
+    }
+  };
+
+  const forceSearch = (event: KeyboardEvent) => {
+    if (event.key === 'Enter') {
+      handleResultPage();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', removeDropdown);
+    document.addEventListener('keydown', forceSearch);
+
+    return () => {
+      document.removeEventListener('click', removeDropdown);
+      document.removeEventListener('keydown', forceSearch);
+    };
+  }, []);
 
   const isFilteredEmpty = store.filteredData.reduce(
     (isEmpty, category) => category.items.length === 0 && isEmpty,
@@ -42,7 +57,7 @@ const SearchDropdown: React.FC<Props> = (props) => {
 
   if (isFilteredEmpty) {
     return (
-      <div className="searchDropdown-component">
+      <div className="searchDropdown-component" ref={dropdownRef}>
         <p className="searchDropdown-noResult">
           По вашему запросу ничего не найдено
         </p>
@@ -51,12 +66,11 @@ const SearchDropdown: React.FC<Props> = (props) => {
   }
 
   return (
-    <div className="searchDropdown-component">
+    <div className="searchDropdown-component" ref={dropdownRef}>
       <div className="searchDropdown-scroll">
         <SearchResult
-          categories={store.dropdownWithLimit}
+          categories={store.limitedCategories}
           onItemClick={onItemClick}
-          increaseFrequency={increaseFrequency}
         />
       </div>
       <div className="searchDropdown-showAll">

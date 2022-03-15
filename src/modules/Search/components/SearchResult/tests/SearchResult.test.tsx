@@ -15,7 +15,8 @@ const data = [
         name: 'Кинопоиск',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
-        frequency: 1,
+        frequency: 0,
+        link: 'https://dev.gnivc.ru/',
         keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
         data: [
           {
@@ -29,7 +30,9 @@ const data = [
 ];
 const store = new SearchStore(data);
 
-const component = <SearchResult categories={store.items} />;
+const component = (
+  <SearchResult categories={store.items} onItemClick={() => {}} />
+);
 
 describe('Компонент SearchResult', () => {
   it('отображается без ошибок', () => {

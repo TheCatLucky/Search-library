@@ -6,13 +6,7 @@ import data from '../../../../../data';
 import SearchStore from '../../../store';
 
 const store = new SearchStore(data);
-const renderComponent = () => render(
-  <ResultPage
-    categories={store.filteredData}
-    searchValue="и"
-    resultPageAllItems={store.resultPageAllItems}
-  />,
-);
+const renderComponent = () => render(<ResultPage store={store} onItemClick={() => {}} />);
 
 describe('Компонент ResultPage', () => {
   it('отображается без ошибок', () => {

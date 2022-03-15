@@ -4,35 +4,45 @@ import React, { useState } from 'react';
 
 import { ItemModel } from '../../models';
 import SearchStore from '../../store';
-import ResultPage from '../ResultPage';
 import SearchDropdown from '../SearchDropdown';
 
 type Props = {
+  showResultPage: React.Dispatch<React.SetStateAction<boolean>>;
   store: SearchStore;
   limit?: number;
   onItemClick: (item: ItemModel) => void;
 };
 
 const Search: React.FC<Props> = (props) => {
-  const { store, limit, onItemClick } = props;
   const {
-    setSearchValue, setFilteredDate, setLimit, increaseFrequency,
-  } = store;
+    store,
+    limit,
+    onItemClick,
+    showResultPage: setShowResultPage,
+  } = props;
+  const { setSearchValue, setFilteredDate, setLimit } = store;
+
   const [showDropdown, setShowDropdown] = useState(false);
-  const [showResultPage, setShowResultPage] = useState(false);
+
   const handleSearch: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-    setShowDropdown(true);
-    setSearchValue(event.target.value);
-    setFilteredDate(store.filteredItems);
+    if (event.target.value.length > 0) {
+      setShowDropdown(true);
+      setSearchValue(event.target.value);
+      setFilteredDate(store.filteredItems);
+    } else {
+      setShowDropdown(false);
+      setSearchValue(event.target.value);
+    }
   };
 
   if (limit) {
     setLimit(limit);
   }
-
-  if (!store.searchValue) {
-    // setShowDropdown(false);
-  }
+  /*
+    Как сделать правильно метод onFocus, чтобы при клике вызывалось окно?
+    Мое предположение что нужно передать ref Текстового поля, чтобы
+    SearchDropdown проверял не только себя.
+  */
   return (
     <div className="search-component">
       <div className="search-search">
@@ -52,16 +62,6 @@ const Search: React.FC<Props> = (props) => {
           setShowDropdown={setShowDropdown}
           setShowResultPage={setShowResultPage}
           onItemClick={onItemClick}
-          increaseFrequency={increaseFrequency}
-        />
-      )}
-      {showResultPage && (
-        <ResultPage
-          categories={store.resultPageData}
-          searchValue={store.resultSearchValue}
-          resultPageAllItems={store.resultPageAllItems}
-          onItemClick={onItemClick}
-          increaseFrequency={increaseFrequency}
         />
       )}
     </div>

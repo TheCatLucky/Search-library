@@ -6,12 +6,12 @@ import SearchItem from '../SearchItem';
 
 type Props = {
   categories: CategoryModel[];
-  increaseFrequency: (item: ItemModel) => void;
   onItemClick: (item: ItemModel) => void;
 };
 
 const SearchResult: React.FC<Props> = (props) => {
-  const { categories, onItemClick, increaseFrequency } = props;
+  const { categories, onItemClick } = props;
+
   return (
     <>
       {categories.map((category) => {
@@ -28,7 +28,6 @@ const SearchResult: React.FC<Props> = (props) => {
                   key={item.id}
                   link={item.link}
                   onItemClick={onItemClick}
-                  increaseFrequency={increaseFrequency}
                 />
               ))}
             </div>

@@ -2,38 +2,41 @@ import React, { useState } from 'react';
 import Pagination from '@ff/ui-kit/lib/Pagination';
 import Button from '@ff/ui-kit/lib/Button';
 import { Title } from '@ff/ui-kit/lib/Typography';
+import { observer } from 'mobx-react-lite';
 
-import { CategoryModel, ItemModel } from '../../models';
+import { ItemModel } from '../../models';
 import SearchItem from '../SearchItem';
+import SearchStore from '../../store/searchStore';
 
 type Props = {
-  categories: CategoryModel[];
-  resultPageAllItems: ItemModel[];
-  searchValue: string;
-  increaseFrequency: (item: ItemModel) => void;
+  store: SearchStore;
   onItemClick: (item: ItemModel) => void;
 };
 
 const ResultPage: React.FC<Props> = (props) => {
+  const { onItemClick, store } = props;
   const {
-    categories,
+    resultPageData: categories,
     resultPageAllItems,
-    searchValue,
-    onItemClick,
-    increaseFrequency,
-  } = props;
+    resultSearchValue: searchValue,
+  } = store;
+
   const [currentTab, setCurrentTab] = useState(0);
   const [page, setPage] = React.useState(1);
+
+  const perPage = 10;
+  const paginationItemsCount =
+    currentTab === 0
+      ? resultPageAllItems.length
+      : categories[currentTab - 1].items.length;
+
   const handleButtonClick = (value: number) => {
     setCurrentTab(value);
+    setPage(1);
   };
-  const perPage = 10;
-  const paginationItemsCount = currentTab === 0
-    ? resultPageAllItems.length
-    : categories[currentTab - 1].items.length;
 
   return (
-    <div>
+    <div className="resultPage">
       <div>
         <Title bold level={4} className="resultPage-searchValue">
           Результаты поиска по : <span>«{searchValue}»</span>
@@ -64,21 +67,20 @@ const ResultPage: React.FC<Props> = (props) => {
           </Button>
         ))}
       </div>
-      {currentTab === 0
-        && resultPageAllItems
+      {currentTab === 0 &&
+        resultPageAllItems
           .slice(0 + perPage * (page - 1), perPage * page)
           .map((item) => (
             <SearchItem
               item={item}
               logo={item.logo}
-              key={item.name}
+              key={item.id}
               link={item.link}
               onItemClick={onItemClick}
-              increaseFrequency={increaseFrequency}
             />
           ))}
-      {currentTab !== 0
-        && categories[currentTab - 1].items
+      {currentTab !== 0 &&
+        categories[currentTab - 1].items
           .slice(0 + perPage * (page - 1), perPage * page)
           .map((item) => (
             <SearchItem
@@ -87,7 +89,6 @@ const ResultPage: React.FC<Props> = (props) => {
               key={item.id}
               link={item.link}
               onItemClick={onItemClick}
-              increaseFrequency={increaseFrequency}
             />
           ))}
       <Pagination
@@ -102,4 +103,4 @@ const ResultPage: React.FC<Props> = (props) => {
   );
 };
 
-export default ResultPage;
+export default observer(ResultPage);
