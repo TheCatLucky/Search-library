@@ -12,7 +12,7 @@ const search = (
     store={store}
     limit={10}
     onItemClick={() => {}}
-    showResultPage={() => {}}
+    setShowResultPage={() => {}}
   />
 );
 
@@ -28,7 +28,7 @@ describe('Компонент Search', () => {
     expect(screen.getAllByText(/дата/i)[0]).toBeInTheDocument();
     userEvent.type(userScreen, 'Z');
     expect(
-      screen.getByText('По вашему запросу ничего не найдено'),
+      screen.getByText('По вашему запросу ничего не найдено')
     ).toBeInTheDocument();
   });
 });

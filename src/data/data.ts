@@ -12,7 +12,7 @@ const data: CategoryModel[] = [
     items: [
       {
         id: 101,
-        name: 'Название класса',
+        name: 'Класс ППО 137/569-ДД',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -36,7 +36,7 @@ const data: CategoryModel[] = [
 
       {
         id: 102,
-        name: 'Название класса 1',
+        name: 'Класс ППО 186/129-ОЛ',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -58,7 +58,7 @@ const data: CategoryModel[] = [
       },
       {
         id: 103,
-        name: 'Название класса 2',
+        name: 'Класс ДКГ 023/332-ЛЛ',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -80,7 +80,7 @@ const data: CategoryModel[] = [
       },
       {
         id: 104,
-        name: 'Название класса 3',
+        name: 'Класс ОМЛ 096/153-ЛК',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -102,7 +102,7 @@ const data: CategoryModel[] = [
       },
       {
         id: 105,
-        name: 'Название класса 4',
+        name: 'Класс ППО 117/529-ДК',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -124,7 +124,7 @@ const data: CategoryModel[] = [
       },
       {
         id: 106,
-        name: 'Название класса 5',
+        name: 'Класс ППП 197/579-ПК',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -146,7 +146,7 @@ const data: CategoryModel[] = [
       },
       {
         id: 107,
-        name: 'Название класса 6',
+        name: 'Класс ПРО 107/069-МД',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -175,7 +175,7 @@ const data: CategoryModel[] = [
     items: [
       {
         id: 201,
-        name: 'Название объекта 1',
+        name: 'Объект ППЛ 107/509-ДД',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -193,7 +193,7 @@ const data: CategoryModel[] = [
       },
       {
         id: 202,
-        name: 'Название объекта 2',
+        name: 'Объект РКП 145/504-ВФ',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -211,7 +211,7 @@ const data: CategoryModel[] = [
       },
       {
         id: 203,
-        name: 'Название объекта 3',
+        name: 'Объект ППЛ 117/509-ДД',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -229,7 +229,7 @@ const data: CategoryModel[] = [
       },
       {
         id: 204,
-        name: 'Название объекта 4',
+        name: 'Объект ППЛ 107/519-ДД',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -247,7 +247,7 @@ const data: CategoryModel[] = [
       },
       {
         id: 205,
-        name: 'Название объекта 5',
+        name: 'Объект ППЛ 107/533-ДД',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -272,7 +272,7 @@ const data: CategoryModel[] = [
     items: [
       {
         id: 301,
-        name: 'Название источника данных',
+        name: 'Источник данных РП-154/78',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -294,7 +294,7 @@ const data: CategoryModel[] = [
       },
       {
         id: 302,
-        name: 'Название источника данных 2',
+        name: 'Источник данных РП-104/78',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -316,7 +316,7 @@ const data: CategoryModel[] = [
       },
       {
         id: 303,
-        name: 'Название источника данных 3',
+        name: 'Источник данных РП-234/78',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -338,7 +338,7 @@ const data: CategoryModel[] = [
       },
       {
         id: 304,
-        name: 'Название источника данных 4',
+        name: 'Источник данных РП-150/78',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -360,7 +360,7 @@ const data: CategoryModel[] = [
       },
       {
         id: 305,
-        name: 'Название источника данных 5',
+        name: 'Источник данных РП-654/78',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
