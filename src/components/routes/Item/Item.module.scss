@@ -1,0 +1,72 @@
+@import "~@ff/ui-kit/lib/styles/scss/fns/colors";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: $base-color-10;
+  color: $base-color-900;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: $base-color-200;
+    border-radius: 1px;
+  }
+  .component {
+    margin: 24px;
+
+    a {
+      text-decoration: none;
+      color: $primary-color-600;
+    }
+
+    .mainInfo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+    .logo {
+      width: 40px;
+      margin-right: 16px;
+    }
+
+    .itemName {
+      color: $base-color-900;
+    }
+
+    .shortInfo {
+      display: flex;
+      flex-flow: row;
+      margin-top: 16px;
+      font-size: 14px;
+      color: $base-color-500;
+
+      p {
+        margin-top: 4px;
+        margin-bottom: 0px;
+      }
+
+      span {
+        padding-right: 16px;
+        color: $base-color-900;
+      }
+    }
+
+    .date {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      font-size: 14px;
+      color: $base-color-500;
+
+      span {
+        color: $base-color-900;
+      }
+    }
+  }
+}

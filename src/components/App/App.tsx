@@ -1,79 +1,58 @@
 import React, { useState } from 'react';
-import Icon from '@ff/ui-kit/lib/Icon';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import data from '../../data';
-import logo from '../../assets/Smal.svg';
-import activity from '../../assets/Activity.svg';
-import structure from '../../assets/Structure.svg';
-import object from '../../assets/Object.svg';
-import folderStar from '../../assets/FolderStar.svg';
-import notification from '../../assets/Notification.svg';
-import {
-  ResultPage,
-  Search,
-  SearchStore,
-  ItemModel,
-} from '../../modules/search';
+import { SearchStore, ItemModel } from '../../modules/search';
+import { Home, Item } from '../routes/';
+import { CustomError, Header } from '../ui';
 import classes from './App.module.scss';
 
 const store = new SearchStore(data);
 
 const App: React.FC = () => {
   const [showResultPage, setShowResultPage] = useState(false);
-
-  // Как правильно менять frequency?
+  const [current, setCurrent] = useState<null | ItemModel>(null);
+  const navigate = useNavigate();
   const handleClick = (currentItem: ItemModel) => {
-    store.items.forEach((category) =>
-      category.items.forEach((item) => {
-        if (item.id === currentItem.id) {
-          item.frequency += 1;
-        }
-      })
-    );
+    const updatedArr = data.map((categoty) => {
+      setCurrent(currentItem);
+
+      const items = categoty.items.map((item) =>
+        item.id === currentItem.id
+          ? { ...item, frequency: item.frequency + 1 }
+          : item
+      );
+      return {
+        ...categoty,
+        items,
+      };
+    });
+
+    store.setItems(updatedArr);
+    navigate(`/item/${currentItem.id}`);
   };
 
   return (
     <main className={classes.component}>
-      <header className={classes.header}>
-        <div className={classes.name}>
-          <img src={logo} alt="Лого хедера" />
-          <span>Реестр систем</span>
-        </div>
-        <div className={classes.search}>
-          <Search
-            store={store}
-            onItemClick={handleClick}
-            showResultPage={setShowResultPage}
-          />
-        </div>
-        <div className={classes.infoBar}>
-          <div className={classes.navigation}>
-            <div>
-              <img src={structure} alt="Структура" />
-              <span>Структура</span>
-            </div>
-            <div>
-              <img src={object} alt="Объекты" />
-              <span>Объекты</span>
-            </div>
-          </div>
-          <div className={classes.notifications}>
-            <img src={activity} alt="Активности" />
-            <img src={folderStar} alt="Папка" />
-            <img src={notification} alt="Уведомления" />
-          </div>
-          <div className={classes.user}>
-            <Icon name="settings" />
-            <Icon name="person" />
-            <span>Кондратьев В.В.</span>
-          </div>
-        </div>
-      </header>
-      <div className={classes.content}>
-        {showResultPage && (
-          <ResultPage store={store} onItemClick={handleClick} />
-        )}
-      </div>
+      <Header
+        store={store}
+        onItemClick={handleClick}
+        showResultPage={setShowResultPage}
+      />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              store={store}
+              onItemClick={handleClick}
+              showResultPage={showResultPage}
+            />
+          }
+        />
+        <Route path="/item/:view" element={<Item item={current} />} />
+        <Route path="*" element={<CustomError />} />
+      </Routes>
     </main>
   );
 };

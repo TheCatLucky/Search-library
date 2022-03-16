@@ -17,7 +17,6 @@ const data: CategoryModel[] = [
         updated: new Date(2022, 1, 17),
         frequency: 0,
         logo: uniqLogo,
-        link: 'https://www.google.com/',
         keywords: ['Класс', 'Название', 'ГНИВЦ'],
         data: [
           {
@@ -41,7 +40,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Статьи', 'Ссылки'],
         data: [
           {
@@ -64,7 +62,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Класс', 'Название', 'ГНИВЦ'],
         data: [
           {
@@ -87,7 +84,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Класс', 'Название', 'ГНИВЦ'],
         data: [
           {
@@ -110,7 +106,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Статьи', 'Ссылки'],
         data: [
           {
@@ -133,7 +128,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Статьи', 'Ссылки'],
         data: [
           {
@@ -156,7 +150,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Статьи', 'Ссылки'],
         data: [
           {
@@ -186,7 +179,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Объект', 'Атрибут', 'ГНИВЦ'],
         data: [
           {
@@ -205,7 +197,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Объект', 'Атрибут', 'ГНИВЦ'],
         data: [
           {
@@ -224,7 +215,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Объект', 'Атрибут', 'ГНИВЦ'],
         data: [
           {
@@ -243,7 +233,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Объект', 'Атрибут', 'ГНИВЦ'],
         data: [
           {
@@ -262,7 +251,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Объект', 'Атрибут', 'ГНИВЦ'],
         data: [
           {
@@ -279,7 +267,7 @@ const data: CategoryModel[] = [
   },
   {
     id: 3,
-    title: 'Источники данных 1',
+    title: 'Источники данных',
     logo: dataSourceLogo,
     items: [
       {
@@ -288,9 +276,68 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Источник', 'Атрибут', 'Класс', 'ГНИВЦ'],
         data: [
+          {
+            name: 'Атрибуты',
+            value: 123,
+          },
+          {
+            name: 'Связанные классы',
+            value: 523,
+          },
+          {
+            name: 'Связанные источники данных',
+            value: 10,
+          },
+          {
+            name: 'Атрибуты',
+            value: 123,
+          },
+          {
+            name: 'Связанные классы',
+            value: 523,
+          },
+          {
+            name: 'Связанные источники данных',
+            value: 10,
+          },
+          {
+            name: 'Атрибуты',
+            value: 123,
+          },
+          {
+            name: 'Связанные классы',
+            value: 523,
+          },
+          {
+            name: 'Связанные источники данных',
+            value: 10,
+          },
+          {
+            name: 'Атрибуты',
+            value: 123,
+          },
+          {
+            name: 'Связанные классы',
+            value: 523,
+          },
+          {
+            name: 'Связанные источники данных',
+            value: 10,
+          },
+          {
+            name: 'Атрибуты',
+            value: 123,
+          },
+          {
+            name: 'Связанные классы',
+            value: 523,
+          },
+          {
+            name: 'Связанные источники данных',
+            value: 10,
+          },
           {
             name: 'Атрибуты',
             value: 123,
@@ -311,7 +358,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Источник', 'Атрибут', 'Класс', 'ГНИВЦ'],
         data: [
           {
@@ -334,7 +380,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Источник', 'Атрибут', 'Класс', 'ГНИВЦ'],
         data: [
           {
@@ -357,7 +402,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Источник', 'Атрибут', 'Класс', 'ГНИВЦ'],
         data: [
           {
@@ -380,7 +424,6 @@ const data: CategoryModel[] = [
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
-        link: 'https://www.google.com/',
         keywords: ['Источник', 'Атрибут', 'Класс', 'ГНИВЦ'],
         data: [
           {

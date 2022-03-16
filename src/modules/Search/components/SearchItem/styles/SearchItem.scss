@@ -1,6 +1,4 @@
-$fontColorBlack: #18191b;
-$fontColorBlue: #0057ff;
-$infoFontColor: #797d86;
+@import "~@ff/ui-kit/lib/styles/scss/fns/colors";
 .searchItem {
   &-component {
     display: flex;
@@ -22,11 +20,11 @@ $infoFontColor: #797d86;
 
   &-itemName {
     font-size: 16px;
-    color: $fontColorBlack;
+    color: $base-color-900;
 
     a {
       text-decoration: none;
-      color: $fontColorBlue;
+      color: $primary-color-600;
     }
   }
 
@@ -34,7 +32,7 @@ $infoFontColor: #797d86;
     display: flex;
     flex-flow: row wrap;
     font-size: 14px;
-    color: $infoFontColor;
+    color: $base-color-500;
 
     p {
       margin-top: 4px;
@@ -43,7 +41,7 @@ $infoFontColor: #797d86;
 
     span {
       padding-right: 16px;
-      color: $fontColorBlack;
+      color: $base-color-900;
     }
   }
 
@@ -51,11 +49,11 @@ $infoFontColor: #797d86;
     display: flex;
     flex-direction: column;
     font-size: 14px;
-    color: $infoFontColor;
-    margin: 0px 24px 0px 32px;
+    color: $base-color-500;
+    margin: 0px 0px 0px 32px;
 
     span {
-      color: $fontColorBlack;
+      color: $base-color-900;
     }
   }
 }

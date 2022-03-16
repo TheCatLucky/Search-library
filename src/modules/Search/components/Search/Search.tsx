@@ -7,10 +7,10 @@ import SearchStore from '../../store';
 import SearchDropdown from '../SearchDropdown';
 
 type Props = {
-  showResultPage: React.Dispatch<React.SetStateAction<boolean>>;
   store: SearchStore;
-  limit?: number;
+  showResultPage: React.Dispatch<React.SetStateAction<boolean>>;
   onItemClick: (item: ItemModel) => void;
+  limit?: number;
 };
 
 const Search: React.FC<Props> = (props) => {
@@ -38,11 +38,7 @@ const Search: React.FC<Props> = (props) => {
   if (limit) {
     setLimit(limit);
   }
-  /*
-    Как сделать правильно метод onFocus, чтобы при клике вызывалось окно?
-    Мое предположение, что нужно передать ref Текстового поля, чтобы
-    SearchDropdown проверял не только себя.
-  */
+
   return (
     <div className="search-component">
       <div className="search-search">

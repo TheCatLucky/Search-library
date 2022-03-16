@@ -25,10 +25,9 @@ const ResultPage: React.FC<Props> = (props) => {
   const [page, setPage] = React.useState(1);
 
   const perPage = 10;
-  const paginationItemsCount =
-    currentTab === 0
-      ? resultPageAllItems.length
-      : categories[currentTab - 1].items.length;
+  const paginationItemsCount = currentTab === 0
+    ? resultPageAllItems.length
+    : categories[currentTab - 1].items.length;
 
   const handleButtonClick = (value: number) => {
     setCurrentTab(value);
@@ -67,29 +66,17 @@ const ResultPage: React.FC<Props> = (props) => {
           </Button>
         ))}
       </div>
-      {currentTab === 0 &&
-        resultPageAllItems
+      {currentTab === 0
+        && resultPageAllItems
           .slice(0 + perPage * (page - 1), perPage * page)
           .map((item) => (
-            <SearchItem
-              item={item}
-              logo={item.logo}
-              key={item.id}
-              link={item.link}
-              onItemClick={onItemClick}
-            />
+            <SearchItem item={item} key={item.id} onItemClick={onItemClick} />
           ))}
-      {currentTab !== 0 &&
-        categories[currentTab - 1].items
+      {currentTab !== 0
+        && categories[currentTab - 1].items
           .slice(0 + perPage * (page - 1), perPage * page)
           .map((item) => (
-            <SearchItem
-              item={item}
-              logo={categories[currentTab - 1].logo}
-              key={item.id}
-              link={item.link}
-              onItemClick={onItemClick}
-            />
+            <SearchItem item={item} key={item.id} onItemClick={onItemClick} />
           ))}
       <Pagination
         siblingCount={2}

@@ -10,7 +10,6 @@ const data: ItemModel = {
   created: new Date(2022, 1, 17),
   updated: new Date(2022, 1, 17),
   frequency: 0,
-  link: 'https://dev.gnivc.ru/',
   keywords: ['Фильмы', 'Актеры', 'Сценаристы', 'Сериалы'],
   data: [
     {

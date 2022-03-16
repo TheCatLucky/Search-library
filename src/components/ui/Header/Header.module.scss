@@ -1,0 +1,96 @@
+@import "~@ff/ui-kit/lib/styles/scss/fns/colors";
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: $base-color-900;
+
+  .name {
+    display: flex;
+    align-items: center;
+    padding: 21px 56px 21px 24px;
+    font-size: 18px;
+    font-weight: bold;
+
+    span {
+      padding-left: 16px;
+    }
+  }
+
+  .infoBar {
+    display: flex;
+    flex-direction: row;
+
+    .navigation {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 23px;
+
+        img {
+          height: 20px;
+          padding-right: 8px;
+        }
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        margin: 0px 24px 0px 15px;
+        height: 16px;
+        width: 2px;
+        background: $base-color-200;
+        border-radius: 1px;
+      }
+    }
+
+    .notifications {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      img {
+        height: 20px;
+        margin-right: 20px;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        margin: 0px 25px 0px 0px;
+        height: 16px;
+        width: 2px;
+        background: $base-color-200;
+        border-radius: 1px;
+      }
+    }
+    .user {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      i {
+        margin-right: 22px;
+      }
+
+      span {
+        margin-left: -10px;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        margin: 0px 25px 0px 0px;
+        height: 16px;
+        width: 2px;
+        background: $base-color-200;
+        border-radius: 1px;
+      }
+    }
+  }
+}

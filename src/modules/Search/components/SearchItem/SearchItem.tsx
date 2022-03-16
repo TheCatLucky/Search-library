@@ -5,53 +5,45 @@ import { ItemModel } from '../../models';
 
 type Props = {
   item: ItemModel;
-  logo?: string;
-  link?: string;
   onItemClick: (item: ItemModel) => void;
+  setShowDropdown?: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const SearchItem: React.FC<Props> = (props) => {
-  const { item, logo, onItemClick, link } = props;
+  const { item, onItemClick, setShowDropdown } = props;
   const created = item.created.toLocaleDateString();
   const updated = item.updated.toLocaleDateString();
 
   const handleClick = () => {
     onItemClick(item);
+    // Сделать свойство необязательным и проверять на его наличие или же выполнять всегда, даже если state уже false?
+    if (setShowDropdown) {
+      setShowDropdown(false);
+    }
   };
 
   return (
     <div className="searchItem-component">
       <div className="searchItem-logo">
-        <img src={item.logo || logo} alt="Лого" />
+        <img src={item.logo} alt="Лого" />
       </div>
       <div className="searchItem-mainInfo">
         <div className="searchItem-itemName">
-          {link ? (
-            <Link
-              href={link}
-              target="_blank"
-              rel="noreferrer"
-              onClick={handleClick}
-            >
-              {item.name}
-            </Link>
-          ) : (
-            <span>{item.name}</span>
-          )}
+          <Link onClick={handleClick}>{item.name}</Link>
         </div>
         <div className="searchItem-shortInfo">
           {item.data.map((field) => (
             <p key={field.name}>
-              {field.name}:<span>{field.value}</span>
+              {field.name}:<span> {field.value}</span>
             </p>
           ))}
         </div>
       </div>
       <div className="searchItem-date">
-        Дата создания: <span>{created}</span>
+        Дата создания:<span> {created}</span>
       </div>
       <div className="searchItem-date">
-        Последнее исправление: <span>{updated}</span>
+        Последнее исправление:<span> {updated}</span>
       </div>
     </div>
   );

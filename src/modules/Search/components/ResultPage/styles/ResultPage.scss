@@ -1,12 +1,10 @@
-$backgroundNotSelected: #ebf1ff;
-$backgroundSelected: #494b50;
-$fontColor: #18191b;
+@import "~@ff/ui-kit/lib/styles/scss/fns/colors";
 .resultPage {
   padding-left: 32px;
 
   &-searchValue {
     margin: 24px 0px;
-    color: $fontColor;
+    color: $base-color-900;
 
     span {
       font-style: italic;
@@ -17,32 +15,32 @@ $fontColor: #18191b;
   &-tab {
     height: 32px;
     margin-right: 8px;
-    background-color: #e4e5e7;
+    background-color: $base-color-100;
     border-radius: 4px;
     border: none !important;
     cursor: pointer;
 
     &:hover {
-      background: $backgroundSelected;
-      color: #ffffff;
+      background: $base-color-700;
+      color: $white;
       transition: 0.3s;
     }
 
     span span {
       padding: 0px 4px;
-      color: $fontColor;
-      background: $backgroundNotSelected;
+      color: $base-color-900;
+      background: $primary-color-100;
       border-radius: 16px;
     }
 
     &_selected {
-      background-color: $backgroundSelected !important;
-      color: #ffffff !important;
+      background-color: $base-color-700 !important;
+      color: $white !important;
 
       span span {
         padding: 0px 4px;
-        color: $fontColor;
-        background: $backgroundNotSelected;
+        color: $base-color-900;
+        background: $primary-color-100;
         border-radius: 16px;
       }
     }

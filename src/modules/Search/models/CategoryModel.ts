@@ -17,7 +17,7 @@ class CategoryModel {
   /**
    * Лого категории.
    */
-  logo?: string;
+  logo: string;
 
   /**
    * Элементы категории.
@@ -25,9 +25,9 @@ class CategoryModel {
   items: ItemModel[];
 
   constructor(category: CategoryModel) {
-    this.logo = category.logo;
     this.id = category.id;
     this.title = category.title;
+    this.logo = category.logo;
     this.items = category.items;
   }
 }
