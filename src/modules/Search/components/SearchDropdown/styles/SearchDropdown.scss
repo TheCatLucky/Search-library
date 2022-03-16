@@ -7,7 +7,7 @@
     flex-direction: column;
     margin-top: 4px;
     width: 893px;
-    max-height: 893px;
+    max-height: 90%;
     background: $white;
     border: 1px solid $base-color-100;
   }
@@ -29,19 +29,21 @@
 
   &-scroll {
     overflow-x: auto;
-
-    &::after {
-      content: "";
-      margin-top: 24px;
-      display: block;
-      height: 1px;
-      background: $base-color-100;
-    }
   }
 
   &-showAll {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin: 12px 0px;
+
+    &::before {
+      content: "";
+      margin-bottom: 24px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background: $base-color-100;
+    }
   }
 }

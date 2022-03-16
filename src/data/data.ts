@@ -1,8 +1,8 @@
-import CategoryModel from '../modules/search/models/CategoryModel';
 import classLogo from '../assets/Class.svg';
 import objectLogo from '../assets/Object.svg';
 import dataSourceLogo from '../assets/DataSource.svg';
 import uniqLogo from '../assets/UniqLogo.svg';
+import { CategoryModel } from '../modules/search';
 
 const data: CategoryModel[] = [
   {
@@ -278,66 +278,6 @@ const data: CategoryModel[] = [
         frequency: 0,
         keywords: ['Источник', 'Атрибут', 'Класс', 'ГНИВЦ'],
         data: [
-          {
-            name: 'Атрибуты',
-            value: 123,
-          },
-          {
-            name: 'Связанные классы',
-            value: 523,
-          },
-          {
-            name: 'Связанные источники данных',
-            value: 10,
-          },
-          {
-            name: 'Атрибуты',
-            value: 123,
-          },
-          {
-            name: 'Связанные классы',
-            value: 523,
-          },
-          {
-            name: 'Связанные источники данных',
-            value: 10,
-          },
-          {
-            name: 'Атрибуты',
-            value: 123,
-          },
-          {
-            name: 'Связанные классы',
-            value: 523,
-          },
-          {
-            name: 'Связанные источники данных',
-            value: 10,
-          },
-          {
-            name: 'Атрибуты',
-            value: 123,
-          },
-          {
-            name: 'Связанные классы',
-            value: 523,
-          },
-          {
-            name: 'Связанные источники данных',
-            value: 10,
-          },
-          {
-            name: 'Атрибуты',
-            value: 123,
-          },
-          {
-            name: 'Связанные классы',
-            value: 523,
-          },
-          {
-            name: 'Связанные источники данных',
-            value: 10,
-          },
           {
             name: 'Атрибуты',
             value: 123,

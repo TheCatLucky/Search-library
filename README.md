@@ -10,25 +10,30 @@ import {
   ResultPage,
   Search,
   SearchStore,
+  CategoryModel,
 } from "../../modules/search";
 
-const data = [
+const data: CategoryModel[] = [
   {
-    id: "1",
-    title: "Назваение объекта",
-    logo: "Путь к логотипу",
+    id: 1,
+    title: "Объекты",
+    logo: "../assets/Object.svg",
     items: [
       {
-        id: "1",
-        name: "Название сущности объекта",
+        id: 1,
+        name: "Объект ППО 154/748",
         created: new Date(2000, 1, 1),
         updated: new Date(2000, 1, 1),
         frequency: 0,
-        keywords: ["Ключевые слова"],
+        keywords: ["Список", "Ключевых", "Слов"],
         data: [
           {
-            name: "Название атрибута",
-            value: 1,
+            name: "Атрибуты",
+            value: 12,
+          },
+          {
+            name: "Связанные объекты",
+            value: 135,
           },
         ],
       },
@@ -47,7 +52,7 @@ const App = () => {
 
   return (
     <section>
-      <Search store={store} limit={10} showResultPage={setShowResultPage} />
+      <Search store={store} limit={10} setShowResultPage={setShowResultPage} />
       {showResultPage && <ResultPage store={store} onItemClick={handleClick} />}
     </section>
   );

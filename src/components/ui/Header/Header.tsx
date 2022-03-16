@@ -29,7 +29,7 @@ const Header: React.FC<Props> = (props) => {
         <Search
           store={store}
           onItemClick={onItemClick}
-          showResultPage={showResultPage}
+          setShowResultPage={showResultPage}
         />
       </div>
       <div className={classes.infoBar}>
