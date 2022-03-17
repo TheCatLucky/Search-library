@@ -20,7 +20,8 @@ const Search: React.FC<Props> = (props) => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const handleSearch: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-    if (event.target.value.length > 0) {
+    console.log(event.target.value.length);
+    if (event.target.value.trim().length > 0) {
       setShowDropdown(true);
       setSearchValue(event.target.value);
       setFilteredDate(store.filteredItems);

@@ -166,6 +166,94 @@ const data: CategoryModel[] = [
           },
         ],
       },
+      {
+        id: 108,
+        name: 'Класс ПРО 108/069-МД',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Статьи', 'Ссылки'],
+        data: [
+          {
+            name: 'Объекты',
+            value: 1338,
+          },
+          {
+            name: 'Атрибуты',
+            value: 199,
+          },
+          {
+            name: 'Связи',
+            value: 536,
+          },
+        ],
+      },
+      {
+        id: 109,
+        name: 'Класс ПРО 109/069-МД',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Статьи', 'Ссылки'],
+        data: [
+          {
+            name: 'Объекты',
+            value: 1338,
+          },
+          {
+            name: 'Атрибуты',
+            value: 199,
+          },
+          {
+            name: 'Связи',
+            value: 536,
+          },
+        ],
+      },
+      {
+        id: 110,
+        name: 'Класс ПРО 111/069-МД',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Статьи', 'Ссылки'],
+        data: [
+          {
+            name: 'Объекты',
+            value: 1338,
+          },
+          {
+            name: 'Атрибуты',
+            value: 199,
+          },
+          {
+            name: 'Связи',
+            value: 536,
+          },
+        ],
+      },
+      {
+        id: 111,
+        name: 'Класс ПРО 101/069-МД',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Статьи', 'Ссылки'],
+        data: [
+          {
+            name: 'Объекты',
+            value: 1338,
+          },
+          {
+            name: 'Атрибуты',
+            value: 199,
+          },
+          {
+            name: 'Связи',
+            value: 536,
+          },
+        ],
+      },
     ],
   },
   {
@@ -248,6 +336,114 @@ const data: CategoryModel[] = [
       {
         id: 205,
         name: 'Объект ППЛ 107/533-ДД',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Объект', 'Атрибут', 'ГНИВЦ'],
+        data: [
+          {
+            name: 'Атрибуты',
+            value: 131,
+          },
+          {
+            name: 'Связанные объекты',
+            value: 1338,
+          },
+        ],
+      },
+      {
+        id: 206,
+        name: 'Объект ППЛ 167/533-ДД',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Объект', 'Атрибут', 'ГНИВЦ'],
+        data: [
+          {
+            name: 'Атрибуты',
+            value: 131,
+          },
+          {
+            name: 'Связанные объекты',
+            value: 1338,
+          },
+        ],
+      },
+      {
+        id: 207,
+        name: 'Объект ППЛ 147/533-ДД',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Объект', 'Атрибут', 'ГНИВЦ'],
+        data: [
+          {
+            name: 'Атрибуты',
+            value: 131,
+          },
+          {
+            name: 'Связанные объекты',
+            value: 1338,
+          },
+        ],
+      },
+      {
+        id: 208,
+        name: 'Объект ППЛ 167/833-ДД',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Объект', 'Атрибут', 'ГНИВЦ'],
+        data: [
+          {
+            name: 'Атрибуты',
+            value: 131,
+          },
+          {
+            name: 'Связанные объекты',
+            value: 1338,
+          },
+        ],
+      },
+      {
+        id: 209,
+        name: 'Объект ППЛ 125/533-ДД',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Объект', 'Атрибут', 'ГНИВЦ'],
+        data: [
+          {
+            name: 'Атрибуты',
+            value: 131,
+          },
+          {
+            name: 'Связанные объекты',
+            value: 1338,
+          },
+        ],
+      },
+      {
+        id: 210,
+        name: 'Объект ППЛ 217/533-ДД',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Объект', 'Атрибут', 'ГНИВЦ'],
+        data: [
+          {
+            name: 'Атрибуты',
+            value: 131,
+          },
+          {
+            name: 'Связанные объекты',
+            value: 1338,
+          },
+        ],
+      },
+      {
+        id: 211,
+        name: 'Объект ППЛ 217/103-ДД',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
@@ -361,6 +557,138 @@ const data: CategoryModel[] = [
       {
         id: 305,
         name: 'Источник данных РП-654/78',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Источник', 'Атрибут', 'Класс', 'ГНИВЦ'],
+        data: [
+          {
+            name: 'Атрибуты',
+            value: 123,
+          },
+          {
+            name: 'Связанные классы',
+            value: 523,
+          },
+          {
+            name: 'Связанные источники данных',
+            value: 10,
+          },
+        ],
+      },
+      {
+        id: 306,
+        name: 'Источник данных РП-644/78',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Источник', 'Атрибут', 'Класс', 'ГНИВЦ'],
+        data: [
+          {
+            name: 'Атрибуты',
+            value: 123,
+          },
+          {
+            name: 'Связанные классы',
+            value: 523,
+          },
+          {
+            name: 'Связанные источники данных',
+            value: 10,
+          },
+        ],
+      },
+      {
+        id: 307,
+        name: 'Источник данных РП-654/58',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Источник', 'Атрибут', 'Класс', 'ГНИВЦ'],
+        data: [
+          {
+            name: 'Атрибуты',
+            value: 123,
+          },
+          {
+            name: 'Связанные классы',
+            value: 523,
+          },
+          {
+            name: 'Связанные источники данных',
+            value: 10,
+          },
+        ],
+      },
+      {
+        id: 308,
+        name: 'Источник данных РП-654/08',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Источник', 'Атрибут', 'Класс', 'ГНИВЦ'],
+        data: [
+          {
+            name: 'Атрибуты',
+            value: 123,
+          },
+          {
+            name: 'Связанные классы',
+            value: 523,
+          },
+          {
+            name: 'Связанные источники данных',
+            value: 10,
+          },
+        ],
+      },
+      {
+        id: 309,
+        name: 'Источник данных РП-154/78',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Источник', 'Атрибут', 'Класс', 'ГНИВЦ'],
+        data: [
+          {
+            name: 'Атрибуты',
+            value: 123,
+          },
+          {
+            name: 'Связанные классы',
+            value: 523,
+          },
+          {
+            name: 'Связанные источники данных',
+            value: 10,
+          },
+        ],
+      },
+      {
+        id: 310,
+        name: 'Источник данных РП-754/78',
+        created: new Date(2022, 1, 17),
+        updated: new Date(2022, 1, 17),
+        frequency: 0,
+        keywords: ['Источник', 'Атрибут', 'Класс', 'ГНИВЦ'],
+        data: [
+          {
+            name: 'Атрибуты',
+            value: 123,
+          },
+          {
+            name: 'Связанные классы',
+            value: 523,
+          },
+          {
+            name: 'Связанные источники данных',
+            value: 10,
+          },
+        ],
+      },
+      {
+        id: 311,
+        name: 'Источник данных РП-610/78',
         created: new Date(2022, 1, 17),
         updated: new Date(2022, 1, 17),
         frequency: 0,
