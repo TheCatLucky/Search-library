@@ -3,7 +3,13 @@
   &-component {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     margin-top: 24px;
+  }
+
+  &-row {
+    display: flex;
+    flex-direction: row;
   }
 
   &-logo {
@@ -50,7 +56,7 @@
     flex-direction: column;
     font-size: 14px;
     color: $base-color-500;
-    margin: 0px 0px 0px 32px;
+    margin: 0px 32px 0px 0px;
 
     span {
       color: $base-color-900;
