@@ -13,6 +13,7 @@ const App: React.FC = () => {
   const [showResultPage, setShowResultPage] = useState(false);
   const [current, setCurrent] = useState<null | ItemModel>(null);
   const navigate = useNavigate();
+
   const handleClick = (currentItem: ItemModel) => {
     const updatedArr = data.map((categoty) => {
       setCurrent(currentItem);

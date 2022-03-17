@@ -20,7 +20,6 @@ const Search: React.FC<Props> = (props) => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const handleSearch: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-    console.log(event.target.value.length);
     if (event.target.value.trim().length > 0) {
       setShowDropdown(true);
       setSearchValue(event.target.value);
