@@ -16,10 +16,7 @@ const SearchItem: React.FC<Props> = (props) => {
 
   const handleClick = () => {
     onItemClick(item);
-    // Сделать свойство необязательным и проверять на его наличие или же выполнять всегда, даже если state уже false?
-    if (setShowDropdown) {
-      setShowDropdown(false);
-    }
+    setShowDropdown?.(false);
   };
 
   return (

@@ -21,16 +21,18 @@ const Header: React.FC<Props> = (props) => {
 
   return (
     <header className={classes.wrapper}>
-      <div className={classes.name}>
-        <img src={logo} alt="Лого хедера" />
-        <span>Реестр систем</span>
-      </div>
-      <div className={classes.search}>
-        <Search
-          store={store}
-          onItemClick={onItemClick}
-          setShowResultPage={showResultPage}
-        />
+      <div className={classes.row}>
+        <div className={classes.name}>
+          <img src={logo} alt="Лого хедера" />
+          <span>Реестр систем</span>
+        </div>
+        <div className={classes.search}>
+          <Search
+            store={store}
+            onItemClick={onItemClick}
+            onShowResultClick={showResultPage}
+          />
+        </div>
       </div>
       <div className={classes.infoBar}>
         <div className={classes.navigation}>

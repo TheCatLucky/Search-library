@@ -41,6 +41,13 @@ const data: CategoryModel[] = [
   },
 ];
 
+import {
+  ItemModel,
+  ResultPage,
+  Search,
+  SearchStore,
+} from "../../modules/search";
+
 const store = new SearchStore(data);
 
 const App = () => {
@@ -52,7 +59,7 @@ const App = () => {
 
   return (
     <section>
-      <Search store={store} limit={10} setShowResultPage={setShowResultPage} />
+      <Search store={store} limit={10} onShowResultClick={setShowResultPage} />
       {showResultPage && <ResultPage store={store} onItemClick={handleClick} />}
     </section>
   );

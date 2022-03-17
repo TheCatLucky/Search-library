@@ -8,13 +8,13 @@ import SearchDropdown from '../SearchDropdown';
 
 type Props = {
   store: SearchStore;
-  setShowResultPage: React.Dispatch<React.SetStateAction<boolean>>;
+  onShowResultClick: React.Dispatch<React.SetStateAction<boolean>>;
   onItemClick: (item: ItemModel) => void;
   limit?: number;
 };
 
 const Search: React.FC<Props> = (props) => {
-  const { store, limit, onItemClick, setShowResultPage } = props;
+  const { store, limit, onItemClick, onShowResultClick } = props;
   const { setSearchValue, setFilteredDate, setLimit } = store;
 
   const [showDropdown, setShowDropdown] = useState(false);
@@ -51,7 +51,7 @@ const Search: React.FC<Props> = (props) => {
         <SearchDropdown
           store={store}
           setShowDropdown={setShowDropdown}
-          setShowResultPage={setShowResultPage}
+          setShowResultPage={onShowResultClick}
           onItemClick={onItemClick}
         />
       )}
