@@ -1,11 +1,21 @@
 @import-normalize;
+@import "./modules/Search/styles/index.scss";
+@import "~@ff/ui-kit/lib/styles/scss/fns/colors";
+
+@font-face {
+  font-family: "Roboto";
+  src: url(./assets/Roboto-Bold.ttf);
+  src: url(./assets/Roboto-Italic.ttf);
+  src: url(./assets/Roboto-Regular.ttf);
+}
 
 body {
   height: 100%;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  margin: 0;
-  padding: 0;
+  color: $base-color-900;
+  padding: 0px;
+  margin: 0px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

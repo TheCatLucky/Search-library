@@ -1,0 +1,49 @@
+@import "~@ff/ui-kit/lib/styles/scss/fns/colors";
+.searchDropdown {
+  &-component {
+    position: absolute;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+    width: 893px;
+    max-height: 90%;
+    background: $white;
+    border: 1px solid $base-color-100;
+  }
+
+  &-noResult {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: $base-color-900;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 13px 24px;
+
+    img {
+      height: 40px;
+      margin-right: 16px;
+    }
+  }
+
+  &-scroll {
+    overflow-x: auto;
+  }
+
+  &-showAll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 12px 0px;
+
+    &::before {
+      content: "";
+      margin-bottom: 24px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background: $base-color-100;
+    }
+  }
+}

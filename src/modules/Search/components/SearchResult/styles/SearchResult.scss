@@ -1,0 +1,18 @@
+@import "~@ff/ui-kit/lib/styles/scss/fns/colors";
+.searchResult {
+  &-component {
+    margin-left: 24px;
+  }
+
+  &-title {
+    margin-top: 24px;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      margin: 8px 24px 0px 0px;
+      background: $base-color-100;
+    }
+  }
+}

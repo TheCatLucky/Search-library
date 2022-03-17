@@ -1,11 +1,7 @@
+@import "~@ff/ui-kit/lib/styles/scss/fns/colors";
 .component {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-.content {
-  flex: 1;
-  padding: 16px;
+  height: 1024px;
+  width: 100%;
 }
