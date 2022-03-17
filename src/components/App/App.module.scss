@@ -2,6 +2,22 @@
 .component {
   display: flex;
   flex-direction: column;
-  height: 1024px;
+  height: 100%;
   width: 100%;
+
+  .wrapper {
+    min-height: 1024px;
+    max-height: 100%;
+    background: $base-color-10;
+    color: $base-color-900;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background: $base-color-200;
+      border-radius: 1px;
+    }
+  }
 }

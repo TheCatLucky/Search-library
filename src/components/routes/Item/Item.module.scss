@@ -4,17 +4,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: $base-color-10;
   color: $base-color-900;
 
-  &::before {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 100%;
-    background: $base-color-200;
-    border-radius: 1px;
-  }
   .component {
     margin: 24px;
 

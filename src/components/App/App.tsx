@@ -40,20 +40,22 @@ const App: React.FC = () => {
         onItemClick={handleClick}
         showResultPage={setShowResultPage}
       />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              store={store}
-              onItemClick={handleClick}
-              showResultPage={showResultPage}
-            />
-          }
-        />
-        <Route path="/item/:view" element={<Item item={current} />} />
-        <Route path="*" element={<CustomError />} />
-      </Routes>
+      <div className={classes.wrapper}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                store={store}
+                onItemClick={handleClick}
+                showResultPage={showResultPage}
+              />
+            }
+          />
+          <Route path="/item/:view" element={<Item item={current} />} />
+          <Route path="*" element={<CustomError />} />
+        </Routes>
+      </div>
     </main>
   );
 };

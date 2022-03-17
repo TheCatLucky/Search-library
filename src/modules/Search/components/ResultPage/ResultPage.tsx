@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Pagination from '@ff/ui-kit/lib/Pagination';
 import Button from '@ff/ui-kit/lib/Button';
 import { Title } from '@ff/ui-kit/lib/Typography';
@@ -29,6 +29,10 @@ const ResultPage: React.FC<Props> = (props) => {
     currentTab === 0
       ? resultPageAllItems.length
       : categories[currentTab - 1].items.length;
+
+  useEffect(() => {
+    setPage(1);
+  }, [searchValue]);
 
   const handleButtonClick = (value: number) => {
     setCurrentTab(value);
