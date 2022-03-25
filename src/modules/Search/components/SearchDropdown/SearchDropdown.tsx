@@ -33,6 +33,8 @@ const SearchDropdown: React.FC<Props> = (props) => {
     setResultSearchValue();
     setShowResultPage(true);
     setShowDropdown(false);
+    localStorage.setItem('rp_page', '1');
+    localStorage.setItem('rp_currentTa', '0');
   };
 
   useEffect(() => {
