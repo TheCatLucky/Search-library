@@ -2,6 +2,7 @@
   "name": "react-mar",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://thecatlucky.github.io/Search-library/",
   "dependencies": {
     "@ff/generator": "^1.5.2",
     "@ff/linting": "1.6.2",
@@ -17,9 +18,9 @@
     "@types/react-dom": "^17.0.11",
     "@types/react-test-renderer": "^17.0.1",
     "axios": "^0.26.0",
+    "gh-pages": "^3.2.3",
     "husky": "^4.3.8",
     "lint-staged": "^11.2.6",
-    "lodash": "^4.17.21",
     "mobx": "^6.4.1",
     "mobx-react-lite": "^3.2.3",
     "postcss": "^8.4.6",
@@ -40,11 +41,13 @@
     "eject": "react-scripts eject",
     "lint": "ff-lint",
     "lint:style": "ff-lint --style",
-    "generate": "ff-generate"
+    "generate": "ff-generate",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
-      "./node_modules/@ff/linting/lib/eslint.config.js"
+      "./node_modules/@ff/linting/src/linting.config.js"
     ]
   },
   "browserslist": {

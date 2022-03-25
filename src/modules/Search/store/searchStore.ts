@@ -1,4 +1,6 @@
-import { action, computed, configure, makeObservable, observable } from 'mobx';
+import {
+  action, computed, configure, makeObservable, observable,
+} from 'mobx';
 
 import { ItemModel } from '../models';
 import CategoryModel from '../models/CategoryModel';
@@ -80,16 +82,12 @@ class SearchStore {
   }
 
   setFilteredDate(data: CategoryModel[]): void {
-    data.forEach((category) =>
-      category.items.sort((a, b) => b.frequency - a.frequency)
-    );
+    data.forEach((category) => category.items.sort((a, b) => b.frequency - a.frequency));
     this.filteredData = data;
   }
 
   setResultPageAllItems(): void {
-    this.resultPageAllItems = this.filteredData.flatMap((category) =>
-      category.items.map((item) => item)
-    );
+    this.resultPageAllItems = this.filteredData.flatMap((category) => category.items.map((item) => item));
   }
 
   setSearchValue(value: string): void {
@@ -110,9 +108,8 @@ class SearchStore {
   get filteredItems(): CategoryModel[] {
     return this.items.map((category) => ({
       ...category,
-      items: category.items.filter((item: ItemModel) =>
-        item.name.toLowerCase().includes(this.searchValue.toLowerCase())
-      ),
+      // eslint-disable-next-line max-len
+      items: category.items.filter((item: ItemModel) => item.name.toLowerCase().includes(this.searchValue.toLowerCase())),
     }));
   }
 
@@ -138,9 +135,7 @@ class SearchStore {
         }
       }
     }
-    limitedCategories.forEach((category) =>
-      category.items.sort((a, b) => b.frequency - a.frequency)
-    );
+    limitedCategories.forEach((category) => category.items.sort((a, b) => b.frequency - a.frequency));
     return limitedCategories;
   }
 }

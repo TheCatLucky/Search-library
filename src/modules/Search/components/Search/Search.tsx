@@ -14,7 +14,9 @@ type Props = {
 };
 
 const Search: React.FC<Props> = (props) => {
-  const { store, limit, onItemClick, onShowResultClick } = props;
+  const {
+    store, limit, onItemClick, onShowResultClick,
+  } = props;
   const { setSearchValue, setFilteredDate, setLimit } = store;
 
   const [showDropdown, setShowDropdown] = useState(false);

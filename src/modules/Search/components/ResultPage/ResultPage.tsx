@@ -7,7 +7,7 @@ import { observer } from 'mobx-react-lite';
 import { ItemModel } from '../../models';
 import SearchItem from '../SearchItem';
 import SearchStore from '../../store/searchStore';
-import useLocalStorage from './../../hooks/useLocalStorage';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 type Props = {
   store: SearchStore;
@@ -22,14 +22,13 @@ const ResultPage: React.FC<Props> = (props) => {
     resultSearchValue: searchValue,
   } = store;
 
-  const [currentTab, setCurrentTab] = useLocalStorage('currentTab', 0);
-  const [page, setPage] = useLocalStorage('page', 1);
+  const [currentTab, setCurrentTab] = useLocalStorage('rp_currentTab', 0);
+  const [page, setPage] = useLocalStorage('rp_page', 1);
 
   const perPage = 10;
-  const paginationItemsCount =
-    currentTab === 0
-      ? resultPageAllItems.length
-      : categories[currentTab - 1].items.length;
+  const paginationItemsCount = currentTab === 0
+    ? resultPageAllItems.length
+    : categories[currentTab - 1].items.length;
 
   useEffect(() => {
     setPage(1);
@@ -70,30 +69,29 @@ const ResultPage: React.FC<Props> = (props) => {
           Все <span>{resultPageAllItems.length}</span>
         </Button>
         {categories.map(
-          (category) =>
-            !!category.items.length && (
-              <Button
-                className={
+          (category) => !!category.items.length && (
+          <Button
+            className={
                   currentTab === category.id
                     ? 'resultPage-tab_selected resultPage-tab'
                     : 'resultPage-tab'
                 }
-                key={category.id}
-                onClick={() => handleButtonClick(category.id)}
-              >
-                {category.title} <span>{category.items.length}</span>
-              </Button>
-            )
+            key={category.id}
+            onClick={() => handleButtonClick(category.id)}
+          >
+            {category.title} <span>{category.items.length}</span>
+          </Button>
+          ),
         )}
       </div>
-      {currentTab === 0 &&
-        resultPageAllItems
+      {currentTab === 0
+        && resultPageAllItems
           .slice(0 + perPage * (page - 1), perPage * page)
           .map((item) => (
             <SearchItem item={item} key={item.id} onItemClick={onItemClick} />
           ))}
-      {currentTab !== 0 &&
-        categories[currentTab - 1].items
+      {currentTab !== 0
+        && categories[currentTab - 1].items
           .slice(0 + perPage * (page - 1), perPage * page)
           .map((item) => (
             <SearchItem item={item} key={item.id} onItemClick={onItemClick} />

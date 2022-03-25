@@ -15,15 +15,16 @@ type Props = {
 };
 
 const SearchDropdown: React.FC<Props> = (props) => {
-  const { store, setShowDropdown, setShowResultPage, onItemClick } = props;
-  const { setResultPageData, setResultPageAllItems, setResultSearchValue } =
-    store;
+  const {
+    store, setShowDropdown, setShowResultPage, onItemClick,
+  } = props;
+  const { setResultPageData, setResultPageAllItems, setResultSearchValue } = store;
 
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const isFilteredEmpty = store.filteredData.reduce(
     (isEmpty, category) => category.items.length === 0 && isEmpty,
-    true
+    true,
   );
 
   const handleResultPage = () => {

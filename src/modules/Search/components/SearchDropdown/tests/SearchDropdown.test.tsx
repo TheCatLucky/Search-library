@@ -23,7 +23,7 @@ describe('Компонент SearchDropdown', () => {
   it('отображает названия заголовков', () => {
     render(component);
     expect(
-      screen.getByText('По вашему запросу ничего не найдено')
+      screen.getByText('По вашему запросу ничего не найдено'),
     ).toBeInTheDocument();
   });
 });
