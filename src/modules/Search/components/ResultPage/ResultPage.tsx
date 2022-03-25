@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Pagination from '@ff/ui-kit/lib/Pagination';
 import Button from '@ff/ui-kit/lib/Button';
 import { Title } from '@ff/ui-kit/lib/Typography';
@@ -7,6 +7,7 @@ import { observer } from 'mobx-react-lite';
 import { ItemModel } from '../../models';
 import SearchItem from '../SearchItem';
 import SearchStore from '../../store/searchStore';
+import useLocalStorage from './../../hooks/useLocalStorage';
 
 type Props = {
   store: SearchStore;
@@ -21,8 +22,8 @@ const ResultPage: React.FC<Props> = (props) => {
     resultSearchValue: searchValue,
   } = store;
 
-  const [currentTab, setCurrentTab] = useState(0);
-  const [page, setPage] = React.useState(1);
+  const [currentTab, setCurrentTab] = useLocalStorage('currentTab', 0);
+  const [page, setPage] = useLocalStorage('page', 1);
 
   const perPage = 10;
   const paginationItemsCount =
@@ -32,11 +33,18 @@ const ResultPage: React.FC<Props> = (props) => {
 
   useEffect(() => {
     setPage(1);
+    setCurrentTab(0);
   }, [searchValue]);
+
+  useEffect(() => {
+    setPage(page);
+    setCurrentTab(currentTab);
+  }, []);
 
   const handleButtonClick = (value: number) => {
     setCurrentTab(value);
     setPage(1);
+    console.log(value, 'нажатие на кнопку');
   };
 
   const changePage = (currentPage: number) => {
@@ -61,19 +69,22 @@ const ResultPage: React.FC<Props> = (props) => {
         >
           Все <span>{resultPageAllItems.length}</span>
         </Button>
-        {categories.map((category) => (
-          <Button
-            className={
-              currentTab === category.id
-                ? 'resultPage-tab_selected resultPage-tab'
-                : 'resultPage-tab'
-            }
-            key={category.id}
-            onClick={() => handleButtonClick(category.id)}
-          >
-            {category.title} <span>{category.items.length}</span>
-          </Button>
-        ))}
+        {categories.map(
+          (category) =>
+            !!category.items.length && (
+              <Button
+                className={
+                  currentTab === category.id
+                    ? 'resultPage-tab_selected resultPage-tab'
+                    : 'resultPage-tab'
+                }
+                key={category.id}
+                onClick={() => handleButtonClick(category.id)}
+              >
+                {category.title} <span>{category.items.length}</span>
+              </Button>
+            )
+        )}
       </div>
       {currentTab === 0 &&
         resultPageAllItems
