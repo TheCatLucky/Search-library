@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/Search-library/static/css/main.8044f97d.chunk.css",
+    "main.js": "/Search-library/static/js/main.d56cd362.chunk.js",
+    "main.js.map": "/Search-library/static/js/main.d56cd362.chunk.js.map",
+    "runtime-main.js": "/Search-library/static/js/runtime-main.1c9717bc.js",
+    "runtime-main.js.map": "/Search-library/static/js/runtime-main.1c9717bc.js.map",
+    "static/css/2.272ec2f5.chunk.css": "/Search-library/static/css/2.272ec2f5.chunk.css",
+    "static/js/2.87f65dfa.chunk.js": "/Search-library/static/js/2.87f65dfa.chunk.js",
+    "static/js/2.87f65dfa.chunk.js.map": "/Search-library/static/js/2.87f65dfa.chunk.js.map",
+    "index.html": "/Search-library/index.html",
+    "static/css/2.272ec2f5.chunk.css.map": "/Search-library/static/css/2.272ec2f5.chunk.css.map",
+    "static/css/main.8044f97d.chunk.css.map": "/Search-library/static/css/main.8044f97d.chunk.css.map",
+    "static/js/2.87f65dfa.chunk.js.LICENSE.txt": "/Search-library/static/js/2.87f65dfa.chunk.js.LICENSE.txt",
+    "static/media/Activity.4fab9ac6.svg": "/Search-library/static/media/Activity.4fab9ac6.svg",
+    "static/media/Class.4589d1ae.svg": "/Search-library/static/media/Class.4589d1ae.svg",
+    "static/media/DataSource.1335281f.svg": "/Search-library/static/media/DataSource.1335281f.svg",
+    "static/media/FolderStar.684181ba.svg": "/Search-library/static/media/FolderStar.684181ba.svg",
+    "static/media/NoResult.87784e23.svg": "/Search-library/static/media/NoResult.87784e23.svg",
+    "static/media/Notification.7e2048af.svg": "/Search-library/static/media/Notification.7e2048af.svg",
+    "static/media/Object.90f8cdc4.svg": "/Search-library/static/media/Object.90f8cdc4.svg",
+    "static/media/index.scss": "/Search-library/static/media/Roboto-Regular.a8d6ac03.ttf",
+    "static/media/Smal.4107d77c.svg": "/Search-library/static/media/Smal.4107d77c.svg",
+    "static/media/Structure.46d0dda9.svg": "/Search-library/static/media/Structure.46d0dda9.svg",
+    "static/media/UniqLogo.f388b84e.svg": "/Search-library/static/media/UniqLogo.f388b84e.svg",
+    "static/media/fns.theme.css": "/Search-library/static/media/ff-icons.e9816a23.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1c9717bc.js",
+    "static/css/2.272ec2f5.chunk.css",
+    "static/js/2.87f65dfa.chunk.js",
+    "static/css/main.8044f97d.chunk.css",
+    "static/js/main.d56cd362.chunk.js"
+  ]
+}
